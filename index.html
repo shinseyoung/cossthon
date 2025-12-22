@@ -1006,7 +1006,8 @@
 
             ctx.clearRect(0, 0, width, height);
 
-            // Baseline
+            // Baseline - Move to center of graph area (approx 0.4 height) or keep at real center?
+            // Keeping real center but graph is shifted up
             ctx.strokeStyle = 'rgba(0,0,0,0.05)';
             ctx.beginPath(); ctx.moveTo(0, height/2); ctx.lineTo(width, height/2); ctx.stroke();
 
@@ -1028,6 +1029,10 @@
             ctx.lineJoin = 'round';
             ctx.lineCap = 'round';
 
+            // --- Updated Drawing Range to avoid Bottom Popup ---
+            // Previous Range: roughly 0.1*h to 0.9*h
+            // New Range: roughly 0.1*h to 0.7*h (Bottom 30% reserved for popup)
+
             // 1. Draw Alpha Wave (Blue) - LINE ONLY first
             ctx.beginPath();
             ctx.strokeStyle = '#3b82f6'; // Blue
@@ -1040,7 +1045,10 @@
             visibleData.forEach((point, i) => {
                 const alpha = point.eeg_data?.alpha || 0; 
                 // Normalize Alpha
-                const y = height * 0.8 - (alpha * (height * 0.6)); 
+                // Old: y = height * 0.8 - (alpha * (height * 0.6));
+                // New: Base at 0.65h, Span 0.5h upwards
+                const y = (height * 0.65) - (alpha * (height * 0.5)); 
+                
                 const x = i * stepX;
                 
                 if (i === 0) ctx.moveTo(x, y);
@@ -1063,7 +1071,10 @@
                 const hr = point.eeg_data?.HR || 70;
                 // Normalize HR
                 const normalizedHr = (hr - 50) / (120 - 50); 
-                const y = height * 0.9 - (normalizedHr * (height * 0.8));
+                // Old: y = height * 0.9 - (normalizedHr * (height * 0.8));
+                // New: Base at 0.7h, Span 0.6h upwards
+                const y = (height * 0.7) - (normalizedHr * (height * 0.6));
+                
                 const x = i * stepX;
 
                 if (i === 0) ctx.moveTo(x, y);
