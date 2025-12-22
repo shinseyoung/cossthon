@@ -275,7 +275,7 @@
                     <div class="relative flex-1 bg-gradient-to-br from-slate-50/50 to-white/50 rounded-2xl border border-white/50 overflow-hidden shadow-inner">
                         <canvas id="shieldCanvas" class="absolute inset-0 w-full h-full"></canvas>
                         
-                        <div class="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-6 lg:right-6">
+                        <div class="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-6 lg:right-6 z-30">
                             <div class="bg-white/90 backdrop-blur px-4 py-3 lg:px-6 lg:py-4 rounded-xl border-l-4 border-orange-400 shadow-lg flex items-start gap-3 lg:gap-4">
                                 <div class="bg-orange-100 p-2 rounded-full text-orange-500 shrink-0">
                                     <i class="fa-solid fa-triangle-exclamation"></i>
@@ -1006,10 +1006,9 @@
 
             ctx.clearRect(0, 0, width, height);
 
-            // Baseline - Move to center of graph area (approx 0.4 height) or keep at real center?
-            // Keeping real center but graph is shifted up
+            // --- Updated Baseline: Draw it noticeably higher (Top 40%) ---
             ctx.strokeStyle = 'rgba(0,0,0,0.05)';
-            ctx.beginPath(); ctx.moveTo(0, height/2); ctx.lineTo(width, height/2); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0, height * 0.4); ctx.lineTo(width, height * 0.4); ctx.stroke();
 
             // Define window size (how many past points to show)
             const windowSize = 30; // Show last 30 data points for smoother wave
@@ -1029,11 +1028,28 @@
             ctx.lineJoin = 'round';
             ctx.lineCap = 'round';
 
-            // --- Updated Drawing Range to avoid Bottom Popup ---
-            // Previous Range: roughly 0.1*h to 0.9*h
-            // New Range: roughly 0.1*h to 0.7*h (Bottom 30% reserved for popup)
+            // --- Strict Zone Definition ---
+            // Canvas Y=0 is Top. Y=Height is Bottom.
+            // Popup is at bottom 25-30%. 
+            // We force graph to stay between Y=10% (Top) and Y=60% (Bottom Limit).
+            
+            const TOP_LIMIT = height * 0.1; // 10% from top
+            const BOTTOM_LIMIT = height * 0.6; // 60% from top (leaves 40% empty at bottom)
 
-            // 1. Draw Alpha Wave (Blue) - LINE ONLY first
+            // Helper to map value to range [BOTTOM_LIMIT, TOP_LIMIT] (Inverted Y)
+            function mapY(val, minIn, maxIn) {
+                // Clamping input
+                if (val < minIn) val = minIn;
+                if (val > maxIn) val = maxIn;
+                
+                // Normalize 0..1
+                const norm = (val - minIn) / (maxIn - minIn);
+                
+                // Map to Y (Higher val = Lower Y index = Higher on screen)
+                return BOTTOM_LIMIT - (norm * (BOTTOM_LIMIT - TOP_LIMIT));
+            }
+
+            // 1. Draw Alpha Wave (Blue)
             ctx.beginPath();
             ctx.strokeStyle = '#3b82f6'; // Blue
             ctx.lineWidth = 3;
@@ -1044,10 +1060,8 @@
 
             visibleData.forEach((point, i) => {
                 const alpha = point.eeg_data?.alpha || 0; 
-                // Normalize Alpha
-                // Old: y = height * 0.8 - (alpha * (height * 0.6));
-                // New: Base at 0.65h, Span 0.5h upwards
-                const y = (height * 0.65) - (alpha * (height * 0.5)); 
+                // Alpha typically -0.5 to 1.5 approx range for visualization
+                const y = mapY(alpha, -0.2, 1.2); 
                 
                 const x = i * stepX;
                 
@@ -1056,9 +1070,9 @@
 
                 if (i === visibleData.length - 1) { lastX = x; lastY = y; }
             });
-            ctx.stroke(); // Stroke the line first
+            ctx.stroke();
 
-            // 2. Draw Heart Rate (Red) - LINE ONLY first
+            // 2. Draw Heart Rate (Red)
             ctx.beginPath();
             ctx.strokeStyle = '#ef4444'; // Red
             ctx.lineWidth = 3;
@@ -1069,11 +1083,8 @@
 
             visibleData.forEach((point, i) => {
                 const hr = point.eeg_data?.HR || 70;
-                // Normalize HR
-                const normalizedHr = (hr - 50) / (120 - 50); 
-                // Old: y = height * 0.9 - (normalizedHr * (height * 0.8));
-                // New: Base at 0.7h, Span 0.6h upwards
-                const y = (height * 0.7) - (normalizedHr * (height * 0.6));
+                // HR Range 50 to 140
+                const y = mapY(hr, 50, 140); 
                 
                 const x = i * stepX;
 
@@ -1082,15 +1093,13 @@
 
                 if (i === visibleData.length - 1) { lastHrX = x; lastHrY = y; }
             });
-            ctx.stroke(); // Stroke the line first
+            ctx.stroke();
 
-            // Optional: Draw only the leading dot (Header)
-            // Blue Dot
+            // Draw Dots
             ctx.shadowBlur = 0;
             ctx.fillStyle = '#3b82f6';
             ctx.beginPath(); ctx.arc(lastX, lastY, 4, 0, Math.PI * 2); ctx.fill();
             
-            // Red Dot
             ctx.fillStyle = '#ef4444';
             ctx.beginPath(); ctx.arc(lastHrX, lastHrY, 4, 0, Math.PI * 2); ctx.fill();
 
