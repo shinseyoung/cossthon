@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* 기존 스타일 복구 */
         body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; color: #334155; overscroll-behavior-y: none; }
         .glass-card { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; }
         .glass-card-interactive:hover { transform: translateY(-5px); border-color: #fb923c; box-shadow: 0 20px 60px rgba(251, 146, 60, 0.15); }
@@ -18,86 +17,145 @@
         .btn-hover-orange:hover { background-color: #f97316; color: white; border-color: #f97316; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3); }
         .heart-beat { animation: heartbeat 1.5s infinite; }
         @keyframes heartbeat { 0% { transform: scale(1); } 15% { transform: scale(1.15); } 30% { transform: scale(1); } 45% { transform: scale(1.15); } 60% { transform: scale(1); } }
+        .status-dot { animation: gentle-pulse 3s infinite ease-in-out; }
+        @keyframes gentle-pulse { 0% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); opacity: 0.8; } }
         .hidden-view { display: none !important; }
         .fade-in { animation: fadeIn 0.4s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .nav-item.active { background-color: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1); }
+        .nav-item.active i { color: #3b82f6; }
         .mobile-nav-item.active { color: #2563eb; }
+        .mobile-nav-item.active i { transform: translateY(-2px); color: #2563eb; }
+        .mobile-nav-item.active span { font-weight: 700; }
         .calendar-day { cursor: pointer; transition: all 0.2s; }
-        .calendar-day.selected { border: 2px solid #6366f1; transform: scale(1.1); background-color: #fff; z-index: 10; }
+        .calendar-day:hover { background-color: rgba(255, 255, 255, 0.8); transform: scale(1.05); }
+        .calendar-day.selected { border: 2px solid #6366f1; transform: scale(1.1); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3); background-color: #fff; z-index: 10; }
         .mood-btn { transition: all 0.2s; opacity: 0.6; transform: scale(0.95); }
+        .mood-btn:hover { opacity: 1; transform: scale(1); }
         .mood-btn.selected { opacity: 1; transform: scale(1.1); }
-        .freq-btn.selected { background-color: #4f46e5; color: white; }
+        .mood-btn.selected div { box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2); background-color: white; }
+        .freq-btn { transition: all 0.2s; }
+        .freq-btn:hover { border-color: #6366f1; color: #4f46e5; background-color: #eff6ff; }
+        .freq-btn.selected { background-color: #4f46e5; color: white; border-color: #4f46e5; box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3); }
+        input[type=range] { -webkit-appearance: none; height: 8px; border-radius: 5px; background: #e2e8f0; outline: none; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #ffffff; border: 2px solid currentColor; cursor: pointer; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
     </style>
 </head>
-<body class="h-screen flex overflow-hidden">
+<body class="h-screen flex overflow-hidden selection:bg-indigo-100 selection:text-indigo-900">
 
-    <aside class="hidden lg:flex w-72 bg-white border-r border-slate-200 flex-col z-20 shadow-sm">
+    <aside class="hidden lg:flex w-72 bg-white border-r border-slate-200 flex-col z-20 transition-all duration-300 shadow-sm">
         <div class="p-8 pb-4 flex justify-start">
-            <div onclick="switchView('home')" class="flex items-center gap-3 text-indigo-500 mb-2 cursor-pointer">
+            <div onclick="switchView('home')" class="flex items-center gap-3 text-indigo-500 mb-2 cursor-pointer hover:opacity-80 transition-opacity">
                 <i class="fa-solid fa-shield-heart text-2xl"></i>
                 <span class="text-xl font-bold tracking-wide text-slate-800">My<span class="text-indigo-500">Shield</span></span>
             </div>
         </div>
         <nav class="flex-1 px-6 space-y-3 mt-6">
-            <button onclick="switchView('home')" class="nav-item nav-item-home active w-full flex items-center justify-start gap-4 p-4 rounded-2xl text-left font-medium"><i class="fa-solid fa-chart-line w-6 text-center"></i>통합 모니터링</button>
-            <button onclick="switchView('journal')" class="nav-item nav-item-journal w-full flex items-center justify-start gap-4 p-4 rounded-2xl text-left font-medium"><i class="fa-solid fa-book-medical w-6 text-center"></i>감정 일기</button>
-            <button onclick="switchView('healing')" class="nav-item nav-item-healing w-full flex items-center justify-start gap-4 p-4 rounded-2xl text-left font-medium"><i class="fa-solid fa-spa w-6 text-center"></i>힐링 프로그램</button>
-            <button onclick="switchView('settings')" class="nav-item nav-item-settings w-full flex items-center justify-start gap-4 p-4 rounded-2xl text-left font-medium"><i class="fa-solid fa-sliders w-6 text-center"></i>민감도 설정</button>
+            <button onclick="switchView('home')" class="nav-item nav-item-home active w-full flex items-center justify-start gap-4 p-4 text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-2xl transition-all border border-transparent text-left">
+                <i class="fa-solid fa-chart-line w-6 text-center"></i>
+                <span class="font-medium">통합 모니터링 (Monitor)</span>
+            </button>
+            <button onclick="switchView('journal')" class="nav-item nav-item-journal w-full flex items-center justify-start gap-4 p-4 text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-2xl transition-all border border-transparent text-left">
+                <i class="fa-solid fa-book-medical w-6 text-center"></i>
+                <span class="font-medium">감정 일기 (Log)</span>
+            </button>
+            <button onclick="switchView('healing')" class="nav-item nav-item-healing w-full flex items-center justify-start gap-4 p-4 text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-2xl transition-all border border-transparent text-left">
+                <i class="fa-solid fa-spa w-6 text-center"></i>
+                <span class="font-medium">힐링 프로그램</span>
+            </button>
+            <button onclick="switchView('settings')" class="nav-item nav-item-settings w-full flex items-center justify-start gap-4 p-4 text-slate-500 hover:bg-slate-50 hover:text-slate-800 rounded-2xl transition-all border border-transparent text-left">
+                <i class="fa-solid fa-sliders w-6 text-center"></i>
+                <span class="font-medium">민감도 설정</span>
+            </button>
         </nav>
-        <div class="p-6">
+        <div class="p-6" id="sidebar-profile-area">
             <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-100 flex items-center gap-4">
-                <img id="sidebar-profile-img" src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex" class="w-10 h-10 rounded-full bg-white">
+                <div class="relative">
+                    <img id="sidebar-profile-img" src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex" alt="Me" class="w-10 h-10 rounded-full bg-white border border-indigo-200 shadow-sm object-cover">
+                    <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                </div>
                 <div>
                     <p id="sidebar-profile-name" class="text-sm font-bold text-slate-800">바이오헬스 2조</p>
-                    <p class="text-xs text-indigo-500 font-medium">Private Mode</p>
+                    <p id="sidebar-profile-status" class="text-xs text-indigo-500 flex items-center gap-1 font-medium"><i class="fa-solid fa-lock text-[10px]"></i> Private Mode</p>
                 </div>
             </div>
+            <p class="text-[10px] text-slate-400 mt-2 text-center">*본 데이터는 회사에 공유되지 않습니다.</p>
         </div>
     </aside>
 
-    <nav class="lg:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-200 flex justify-around items-center z-50 shadow-md">
-        <button onclick="switchView('home')" class="mobile-nav-item nav-item-home active flex flex-col items-center justify-center w-full h-full text-slate-400"><i class="fa-solid fa-chart-line"></i><span class="text-[10px]">모니터링</span></button>
-        <button onclick="switchView('journal')" class="mobile-nav-item nav-item-journal flex flex-col items-center justify-center w-full h-full text-slate-400"><i class="fa-solid fa-book-medical"></i><span class="text-[10px]">일기</span></button>
-        <button onclick="switchView('healing')" class="mobile-nav-item nav-item-healing flex flex-col items-center justify-center w-full h-full text-slate-400"><i class="fa-solid fa-spa"></i><span class="text-[10px]">힐링</span></button>
-        <button onclick="switchView('settings')" class="mobile-nav-item nav-item-settings flex flex-col items-center justify-center w-full h-full text-slate-400"><i class="fa-solid fa-sliders"></i><span class="text-[10px]">설정</span></button>
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-200 flex justify-around items-center z-50 pb-safe shadow-lg">
+        <button onclick="switchView('home')" class="mobile-nav-item nav-item-home active flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-indigo-500 transition-colors">
+            <i class="fa-solid fa-chart-line text-lg mb-1 transition-transform"></i>
+            <span class="text-[10px] font-medium">모니터링</span>
+        </button>
+        <button onclick="switchView('journal')" class="mobile-nav-item nav-item-journal flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-indigo-500 transition-colors">
+            <i class="fa-solid fa-book-medical text-lg mb-1 transition-transform"></i>
+            <span class="text-[10px] font-medium">일기</span>
+        </button>
+        <button onclick="switchView('healing')" class="mobile-nav-item nav-item-healing flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-indigo-500 transition-colors">
+            <i class="fa-solid fa-spa text-lg mb-1 transition-transform"></i>
+            <span class="text-[10px] font-medium">힐링</span>
+        </button>
+        <button onclick="switchView('settings')" class="mobile-nav-item nav-item-settings flex flex-col items-center justify-center w-full h-full text-slate-400 hover:text-indigo-500 transition-colors">
+            <i class="fa-solid fa-sliders text-lg mb-1 transition-transform"></i>
+            <span class="text-[10px] font-medium">설정</span>
+        </button>
     </nav>
 
     <main class="flex-1 flex flex-col relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1621252179027-94459d27d3ee?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center">
-        <div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] z-0"></div>
+        <div class="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-0"></div>
 
-        <header class="h-16 lg:h-20 flex items-center justify-between px-4 lg:px-10 z-10 relative">
-            <h2 id="header-title" class="text-xl font-bold text-slate-800">나의 정서 보호</h2>
-            <button onclick="switchView('mypage')" class="bg-white/80 px-4 py-2 rounded-lg text-sm border border-slate-200 font-medium flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-circle-user text-indigo-500"></i> 마이페이지
+        <header class="h-16 lg:h-20 flex items-center justify-between px-4 lg:px-10 z-10 relative bg-white/10 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none border-b lg:border-none border-white/20">
+            <div class="flex items-center gap-3">
+                <i onclick="switchView('home')" class="fa-solid fa-shield-heart text-2xl text-indigo-600 lg:hidden cursor-pointer hover:opacity-80 transition-opacity"></i>
+                <div>
+                    <h2 class="text-lg lg:text-xl text-slate-800 font-bold flex items-center gap-2 lg:gap-3">
+                        <span id="header-title" class="truncate max-w-[200px] lg:max-w-none">나의 정서 보호</span>
+                        <span class="hidden lg:flex px-3 py-1 bg-white/80 text-green-600 text-xs rounded-full border border-green-200 shadow-sm items-center gap-2">
+                            <i class="fa-solid fa-shield-halved"></i> 뇌파-심박 융합 분석
+                        </span>
+                    </h2>
+                    <p class="text-xs lg:text-sm text-slate-500 mt-0.5 lg:mt-1 hidden lg:block" id="header-desc">뇌파와 심박의 정밀한 조합 분석을 통해 억눌린 감정 패턴을 찾아냅니다.</p>
+                </div>
+            </div>
+            <button onclick="switchView('mypage')" class="bg-white hover:bg-slate-50 text-slate-600 p-2 lg:px-4 lg:py-2 rounded-lg text-sm border border-slate-200 shadow-sm transition-all font-medium flex items-center gap-2">
+                <i class="fa-solid fa-circle-user text-indigo-500 text-xl lg:text-lg"></i> <span class="hidden lg:inline">마이페이지</span>
             </button>
         </header>
 
-        <div id="content-container" class="flex-1 overflow-y-auto p-4 lg:p-8 z-10 pb-24 lg:pb-20">
+        <div id="content-container" class="flex-1 overflow-y-auto p-4 lg:p-8 z-10 pb-24 lg:pb-20 scroll-smooth">
             
-            <div id="view-home" class="view-section grid grid-cols-1 lg:grid-cols-12 gap-6 fade-in">
-                <div class="lg:col-span-8 glass-card p-6 flex flex-col min-h-[500px] relative">
-                    <div class="flex justify-between items-start mb-4">
+            <div id="view-home" class="view-section grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 fade-in">
+                <div class="lg:col-span-8 glass-card p-5 lg:p-8 flex flex-col min-h-[520px] lg:min-h-[440px] relative">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-4 z-10">
                         <div>
-                            <h3 class="text-lg font-bold text-slate-800">실시간 생체 신호 분석</h3>
-                            <p class="text-xs text-slate-500">FP1 Mean(Blue) & PPG(Red) Sync</p>
+                            <h3 class="text-lg lg:text-xl font-bold text-slate-800 mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-layer-group text-indigo-500"></i> <span class="hidden sm:inline">실시간 생체 신호 분석</span><span class="sm:hidden">실시간 신호 분석</span>
+                            </h3>
+                            <p class="text-xs lg:text-sm text-slate-500">FP1 Mean (EEG) & PPG Signal Sync</p>
                         </div>
-                        <div id="connection-status" class="text-[10px] text-green-500 font-bold bg-green-50 px-2 py-1 rounded-full border border-green-200">LIVE CONNECTED</div>
+                        <div class="flex gap-4 text-[10px] lg:text-xs bg-white/50 p-2 rounded-lg border border-white/60 shadow-sm self-end md:self-auto">
+                            <div class="flex items-center gap-2"><span class="w-3 h-1 rounded-full bg-blue-500"></span><span class="text-slate-600 font-medium">뇌파</span></div>
+                            <div class="flex items-center gap-2"><span class="w-3 h-1 rounded-full bg-red-500"></span><span class="text-slate-600 font-medium">심박</span></div>
+                        </div>
                     </div>
 
-                    <div class="absolute top-20 right-8 z-20 flex flex-col gap-2">
-                        <div class="bg-white/90 p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
-                            <div class="text-red-500 heart-beat"><i class="fa-solid fa-heart"></i></div>
+                    <div class="absolute top-20 lg:top-24 right-4 lg:right-8 z-20 flex flex-col gap-2">
+                        <div class="bg-white/80 backdrop-blur px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                            <div class="text-red-500 heart-beat text-sm lg:text-base"><i class="fa-solid fa-heart"></i></div>
                             <div>
-                                <p class="text-[9px] text-slate-400 font-bold uppercase">HR BPM</p>
-                                <p id="live-bpm" class="text-lg font-bold text-slate-800">--</p>
+                                <p class="text-[9px] lg:text-[10px] text-slate-400 font-bold uppercase">Heart Rate</p>
+                                <p class="text-sm lg:text-lg font-bold text-slate-800 leading-none"><span id="live-bpm">--</span> <span class="text-[10px] lg:text-xs font-normal text-slate-500">BPM</span></p>
                             </div>
                         </div>
-                        <div class="bg-white/90 p-3 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
-                            <div class="text-blue-500"><i class="fa-solid fa-wave-square"></i></div>
+                        <div class="bg-white/80 backdrop-blur px-3 py-1.5 lg:px-4 lg:py-2 rounded-xl shadow-sm border border-slate-100 flex items-center gap-3">
+                            <div class="text-blue-500 text-sm lg:text-base"><i class="fa-solid fa-wave-square"></i></div>
                             <div>
-                                <p class="text-[9px] text-slate-400 font-bold uppercase">Emotion</p>
-                                <p id="live-emotion" class="text-sm font-bold text-slate-800">Analysing</p>
+                                <p class="text-[9px] lg:text-[10px] text-slate-400 font-bold uppercase">Emotion State</p>
+                                <p class="text-sm lg:text-lg font-bold text-slate-800 leading-none" id="live-emotion">Analyzing...</p>
                             </div>
                         </div>
                     </div>
@@ -106,78 +164,161 @@
                         <canvas id="shieldCanvas" class="absolute inset-0 w-full h-full"></canvas>
                         
                         <div class="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-6 lg:right-6">
-                            <div id="alert-box" class="bg-white/95 backdrop-blur px-6 py-4 rounded-xl border-l-4 border-indigo-400 shadow-lg flex items-start gap-4">
-                                <div id="alert-icon" class="bg-indigo-100 p-2 rounded-full text-indigo-500"><i class="fa-solid fa-circle-info"></i></div>
+                            <div id="alert-box" class="bg-white/90 backdrop-blur px-4 py-3 lg:px-6 lg:py-4 rounded-xl border-l-4 border-indigo-400 shadow-lg flex items-start gap-3 lg:gap-4 transition-all">
+                                <div id="alert-icon" class="bg-indigo-100 p-2 rounded-full text-indigo-500 shrink-0"><i class="fa-solid fa-circle-info"></i></div>
                                 <div>
-                                    <p id="alert-title" class="text-sm font-bold text-slate-800">분석 준비 중</p>
-                                    <p id="alert-desc" class="text-xs text-slate-500 mt-1">데이터 베이스라인을 구축하고 있습니다.</p>
+                                    <p id="alert-title" class="text-sm font-bold text-slate-800">데이터 로딩 중...</p>
+                                    <p id="alert-desc" class="text-[11px] lg:text-xs text-slate-500 mt-1 leading-relaxed">analysis_result.json 파일을 서버에서 불러오는 중입니다.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 glass-card p-8 flex flex-col justify-center items-center">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2 text-center">현재 억눌림 부하</h3>
-                    <p class="text-[10px] text-slate-400 mb-6 text-center uppercase">Suppression Load Index</p>
+                <div class="lg:col-span-4 glass-card p-6 lg:p-8 flex flex-col justify-center items-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-orange-50/50"></div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2 w-full text-center">현재 억눌림 지수</h3>
+                    <p class="text-xs text-slate-400 mb-6 text-center border-b border-slate-200 pb-4 w-full">Suppression Load Analysis</p>
                     
                     <div class="relative w-48 h-48 lg:w-56 lg:h-56 mb-6">
                         <svg class="w-full h-full transform -rotate-90">
                             <circle cx="50%" cy="50%" r="45%" stroke="#f1f5f9" stroke-width="12" fill="transparent" />
                             <circle id="suppressGauge" cx="50%" cy="50%" r="45%" stroke="#6366f1" stroke-width="12" fill="transparent" stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" class="transition-all duration-1000"/>
                         </svg>
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                            <span id="gauge-value" class="text-4xl lg:text-5xl font-bold text-slate-800 block">0</span>
-                            <span id="state-tag" class="mt-2 text-[10px] font-bold text-white px-3 py-1 rounded-full bg-slate-400 shadow-sm">WAITING</span>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
+                            <span id="gauge-value" class="text-4xl lg:text-5xl font-bold text-slate-800 block mb-1">0</span>
+                            <span class="text-xs text-slate-400">/ 100</span>
+                            <span id="state-tag" class="mt-2 text-[10px] whitespace-nowrap font-bold text-white px-3 py-1 rounded-full bg-slate-400 shadow-sm">WAITING</span>
                         </div>
                     </div>
-                    <button onclick="switchView('healing')" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-medium transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 text-sm">
-                        <i class="fa-solid fa-mug-hot"></i> 긴급 완화 프로그램
+                    <button onclick="switchView('healing')" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-medium transition-all shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 relative z-10 text-sm">
+                        <i class="fa-solid fa-mug-hot"></i> 긴급 완화 시작하기
                     </button>
+                </div>
+
+                <div class="lg:col-span-7 glass-card p-6">
+                    <h3 class="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2"><i class="fa-regular fa-clock text-slate-400"></i> 실시간 분석 로그</h3>
+                    <div class="relative pl-4 border-l border-slate-300 space-y-8" id="log-container">
+                        <div class="relative">
+                            <span class="absolute -left-[21px] top-1 w-3 h-3 bg-indigo-500 rounded-full border-2 border-white status-dot shadow-sm"></span>
+                            <p class="text-sm text-slate-600">시스템이 가동되었습니다. 실시간 분석을 시작합니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 glass-card p-6 flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-800 mb-6">시간대별 억눌림 모니터링</h3>
+                    <div class="flex-1 min-h-[150px]"><canvas id="resilienceChart"></canvas></div>
                 </div>
             </div>
 
             <div id="view-journal" class="view-section hidden-view fade-in space-y-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="glass-card p-6">
-                        <h3 class="text-lg font-bold text-slate-800 mb-4">감정 달력</h3>
-                        <div class="grid grid-cols-7 gap-1" id="calendar-grid"></div>
-                    </div>
-                    <div class="glass-card p-6 flex flex-col min-h-[400px]">
-                        <h3 class="text-lg font-bold text-slate-800" id="journal-date-title">오늘의 기록</h3>
-                        <div class="flex justify-around my-6" id="mood-selector">
-                            <button onclick="selectMood('happy')" class="mood-btn" id="mood-happy">🙂</button>
-                            <button onclick="selectMood('anxious')" class="mood-btn" id="mood-anxious">😰</button>
-                            <button onclick="selectMood('angry')" class="mood-btn" id="mood-angry">😡</button>
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">12월의 감정 달력</h3>
+                        <div class="grid grid-cols-7 gap-2 text-center text-sm mb-2 text-slate-400">
+                            <div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div>
                         </div>
-                        <textarea id="journal-textarea" class="w-full flex-1 bg-white border rounded-xl p-4 text-sm" placeholder="무슨 일이 있었나요?"></textarea>
-                        <button onclick="saveJournal()" class="mt-4 py-3 bg-indigo-600 text-white rounded-xl font-bold">저장하기</button>
+                        <div class="grid grid-cols-7 gap-1 lg:gap-2" id="calendar-grid"></div>
+                    </div>
+                    <div class="glass-card p-6 flex flex-col relative min-h-[400px]">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-lg font-bold text-slate-800" id="journal-date-title">오늘의 감정 기록하기</h3>
+                            <span id="journal-status" class="text-xs text-slate-400 bg-slate-100 px-2 py-1 rounded">작성 모드</span>
+                        </div>
+                        <div class="flex justify-around mb-6" id="mood-selector">
+                            <button onclick="selectMood('happy')" class="mood-btn" id="mood-happy">
+                                <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-xl border border-blue-100">🙂</div>
+                            </button>
+                            <button onclick="selectMood('anxious')" class="mood-btn" id="mood-anxious">
+                                <div class="w-12 h-12 rounded-full bg-orange-50 flex items-center justify-center text-xl border border-orange-300">😰</div>
+                            </button>
+                            <button onclick="selectMood('angry')" class="mood-btn" id="mood-angry">
+                                <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-xl border border-red-100">😡</div>
+                            </button>
+                        </div>
+                        <textarea id="journal-textarea" class="w-full flex-1 bg-white border border-slate-200 rounded-xl p-4 text-sm focus:outline-none focus:border-indigo-500 mb-4" placeholder="오늘 무슨 일이 있었나요?"></textarea>
+                        <div class="flex gap-3">
+                            <button onclick="deleteJournal()" id="btn-delete" class="flex-1 py-3 bg-red-50 text-red-500 rounded-xl font-bold hidden">삭제</button>
+                            <button onclick="saveJournal()" id="btn-save" class="flex-[2] py-3 bg-indigo-600 text-white rounded-xl font-bold">저장하기</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="view-healing" class="view-section hidden-view fade-in">힐링 프로그램 콘텐츠...</div>
-            <div id="view-settings" class="view-section hidden-view fade-in">설정 콘텐츠...</div>
-            <div id="view-mypage" class="view-section hidden-view fade-in">마이페이지 콘텐츠...</div>
+            <div id="view-healing" class="view-section hidden-view fade-in">
+                <h2 class="text-xl text-slate-800 font-bold mb-6">나를 위한 맞춤형 힐링</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="healing-grid">
+                    <div class="glass-card p-0 overflow-hidden group border-0">
+                        <div class="h-40 bg-[url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">4-7-8 호흡법</h3>
+                            <p class="text-sm text-slate-500 mb-4">심박수를 즉각적으로 낮춥니다.</p>
+                            <button onclick="startProgram('4-7-8 호흡법')" class="w-full py-2 border rounded-lg btn-hover-orange">시작하기</button>
+                        </div>
+                    </div>
+                    <div class="glass-card p-0 overflow-hidden group border-0">
+                        <div class="h-40 bg-[url('https://images.unsplash.com/photo-1519834785169-98be25ec3f84?q=80&w=1000')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">가면 벗기 명상</h3>
+                            <p class="text-sm text-slate-500 mb-4">온전한 나를 마주합니다.</p>
+                            <button onclick="startProgram('가면 벗기 명상')" class="w-full py-2 border rounded-lg btn-hover-orange">지금 재생</button>
+                        </div>
+                    </div>
+                    <div class="glass-card p-0 overflow-hidden group border-0">
+                        <div class="h-40 bg-[url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1000')] bg-cover bg-center"></div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-slate-800 mb-2">자연의 소리</h3>
+                            <p class="text-sm text-slate-500 mb-4">뇌파를 알파파 상태로 유도합니다.</p>
+                            <button onclick="startProgram('자연의 소리')" class="w-full py-2 border rounded-lg btn-hover-orange">재생하기</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 text-center" id="load-more-btn-container">
+                    <button onclick="loadMorePrograms()" class="px-6 py-3 bg-white border rounded-xl font-bold hover:bg-slate-50">더 많은 프로그램 탐색</button>
+                </div>
+                <div id="more-programs-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 hidden">
+                    <div class="glass-card p-6">추가 프로그램들이 로드되었습니다.</div>
+                </div>
+            </div>
+
+            <div id="view-settings" class="view-section hidden-view fade-in max-w-2xl mx-auto">
+                <div class="glass-card p-8">
+                    <h2 class="text-xl text-slate-800 font-bold mb-6">개인화 민감도 설정</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between mb-2"><label class="font-medium">감지 민감도</label><span id="sensitivity-label" class="text-orange-500 font-bold">80</span></div>
+                            <input id="sensitivity-input" type="range" class="w-full" min="1" max="100" value="80">
+                        </div>
+                        <div class="pt-6 border-t">
+                            <h3 class="font-medium mb-4">데이터 관리</h3>
+                            <div onclick="toggleData('local')" class="flex items-center justify-between p-4 bg-slate-50 rounded-lg cursor-pointer mb-3">
+                                <span class="text-sm">로컬 저장</span>
+                                <div id="toggle-local" class="w-12 h-6 bg-green-500 rounded-full relative"><div id="circle-local" class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex justify-end gap-4">
+                        <button onclick="resetSettings()" class="text-slate-500">초기화</button>
+                        <button onclick="saveSettings()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg">저장</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-mypage" class="view-section hidden-view fade-in max-w-2xl mx-auto">
+                <div class="glass-card p-8 text-center">
+                    <img id="mypage-profile-img-preview" src="https://api.dicebear.com/7.x/notionists/svg?seed=Alex" class="w-24 h-24 rounded-full mx-auto mb-4 border">
+                    <input id="mypage-name" type="text" class="w-full p-3 border rounded-xl mb-4 text-center font-bold" value="바이오헬스 2조">
+                    <input id="mypage-img-url" type="text" class="w-full p-2 border rounded text-xs mb-6" value="https://api.dicebear.com/7.x/notionists/svg?seed=Alex">
+                    <button onclick="saveProfile()" class="w-full py-3 bg-indigo-600 text-white rounded-xl font-bold">프로필 저장</button>
+                </div>
+            </div>
 
         </div>
     </main>
 
     <script>
-        // --- View Switching & UI Logic ---
-        function switchView(viewName) {
-            const views = document.querySelectorAll('.view-section');
-            views.forEach(v => v.classList.add('hidden-view'));
-            document.getElementById('view-' + viewName).classList.remove('hidden-view');
-            
-            document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(n => n.classList.remove('active'));
-            document.querySelectorAll('.nav-item-' + viewName).forEach(n => n.classList.add('active'));
-
-            const titles = { 'home': '나의 정서 보호', 'journal': '감정 기록 일지', 'healing': '스트레스 케어', 'settings': '환경 설정', 'mypage': '마이페이지' };
-            document.getElementById('header-title').innerText = titles[viewName];
-        }
-
-        // --- Data Analysis Logic (JSON 연동) ---
+        /* --- CORE LOGIC: DATA FETCHING & ANIMATION --- */
         let timeline = [];
         let currentIndex = 0;
         let eegQueue = new Array(100).fill(0);
@@ -186,89 +327,89 @@
         const ctx = canvas.getContext('2d');
         let width, height;
 
-        async function loadData() {
+        async function loadAnalysisData() {
             try {
                 const response = await fetch('analysis_result.json');
                 const data = await response.json();
                 timeline = data.timeline;
                 startDataLoop();
-            } catch (e) { console.error("Data failed", e); }
+            } catch (e) {
+                console.error("JSON Load Error", e);
+                document.getElementById('alert-title').innerText = "데이터 로드 오류";
+                document.getElementById('alert-desc').innerText = "동일 폴더에 analysis_result.json 파일이 있는지 확인해주세요.";
+            }
         }
-
-        function resize() {
-            width = canvas.parentElement.clientWidth;
-            height = canvas.parentElement.clientHeight;
-            canvas.width = width; canvas.height = height;
-        }
-        window.addEventListener('resize', resize);
-        resize();
 
         function startDataLoop() {
             setInterval(() => {
+                // 홈 뷰가 아닐 때는 계산 건너뜀
                 if(document.getElementById('view-home').classList.contains('hidden-view')) return;
 
                 const step = timeline[currentIndex];
                 
-                // 파형 큐 업데이트
+                // 파형 큐 업데이트 (시각적 스케일 조정)
                 eegQueue.push(step.raw_signals.fp1_mean * 1000); 
                 eegQueue.shift();
                 ppgQueue.push(step.raw_signals.ppg * 15000);
                 ppgQueue.shift();
 
-                // UI 업데이트
+                // UI 수치 업데이트
                 if(step.eeg_data.HR) document.getElementById('live-bpm').innerText = Math.round(step.eeg_data.HR);
                 if(step.russell.emotion) document.getElementById('live-emotion').innerText = step.russell.emotion;
                 
                 if(step.suppression.load !== null) {
                     const loadVal = Math.round(step.suppression.load * 100);
                     updateGaugeUI(loadVal);
-                    updateAlertUI(step.suppression.state);
+                    updateStatusUI(step.suppression.state, loadVal);
                 }
 
                 currentIndex = (currentIndex + 1) % timeline.length;
-                drawWaves();
-            }, 100);
+                drawAnalysisWaves();
+            }, 100); // 0.1초 간격 업데이트
         }
 
         function updateGaugeUI(val) {
             document.getElementById('gauge-value').innerText = val;
             const circle = document.getElementById('suppressGauge');
             circle.style.strokeDashoffset = 283 - (val / 100 * 283);
+            
             const tag = document.getElementById('state-tag');
-            if(val > 60) { tag.className = "mt-2 text-[10px] font-bold text-white px-3 py-1 rounded-full bg-red-400 shadow-sm"; tag.innerText="HIGH"; }
-            else { tag.className = "mt-2 text-[10px] font-bold text-white px-3 py-1 rounded-full bg-indigo-400 shadow-sm"; tag.innerText="NORMAL"; }
+            if(val > 60) { tag.className = "mt-2 text-[10px] font-bold text-white px-3 py-1 rounded-full bg-red-400"; tag.innerText="HIGH"; }
+            else if(val > 30) { tag.className = "mt-2 text-[10px] font-bold text-white px-3 py-1 rounded-full bg-orange-400"; tag.innerText="WARNING"; }
+            else { tag.className = "mt-2 text-[10px] font-bold text-white px-3 py-1 rounded-full bg-green-400"; tag.innerText="STABLE"; }
         }
 
-        function updateAlertUI(state) {
+        function updateStatusUI(state, load) {
             if(!state) return;
             const title = document.getElementById('alert-title');
             const desc = document.getElementById('alert-desc');
             const box = document.getElementById('alert-box');
             
             if(state === "PositiveOverload") {
-                title.innerText = "안정적인 흐름 유지 중";
-                desc.innerText = "이성과 감정이 조화로운 상태입니다.";
-                box.style.borderColor = "#818cf8";
+                title.innerText = "정서적 고양 상태 (Flow)";
+                desc.innerText = "긍정적인 정서 반응과 안정적인 심박 파형이 관측됩니다.";
+                box.className = box.className.replace(/border-[a-z]+-400/, 'border-green-400');
             } else if(state === "MildSuppression") {
-                title.innerText = "주의: 감정 억제 징후 감지";
-                desc.innerText = "신체는 긴장하고 있으나 뇌파가 인위적으로 통제 중입니다.";
-                box.style.borderColor = "#fb923c";
+                title.innerText = "경미한 감정 억제 포착";
+                desc.innerText = "내면의 스트레스 신호가 발생했으나 뇌파가 이를 통제하고 있습니다.";
+                box.className = box.className.replace(/border-[a-z]+-400/, 'border-orange-400');
             }
         }
 
-        function drawWaves() {
+        function drawAnalysisWaves() {
             ctx.clearRect(0, 0, width, height);
+            ctx.lineWidth = 2;
             
-            // EEG (Blue)
-            ctx.beginPath(); ctx.strokeStyle = '#60a5fa'; ctx.lineWidth = 2;
+            // EEG Wave (Blue)
+            ctx.beginPath(); ctx.strokeStyle = '#60a5fa';
             for(let i=0; i<eegQueue.length; i++) {
                 let x = (width/99)*i; let y = (height/2) - eegQueue[i] - 30;
                 if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
             }
             ctx.stroke();
 
-            // PPG (Red)
-            ctx.beginPath(); ctx.strokeStyle = '#f87171'; ctx.lineWidth = 2;
+            // PPG Wave (Red)
+            ctx.beginPath(); ctx.strokeStyle = '#f87171';
             for(let i=0; i<ppgQueue.length; i++) {
                 let x = (width/99)*i; let y = (height/2) - ppgQueue[i] + 30;
                 if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
@@ -276,9 +417,60 @@
             ctx.stroke();
         }
 
-        // 초기 실행
-        loadData();
-        // (기존 일기, 힐링 프로그램 관련 JS 함수들은 용량상 생략했으나 실제 적용 시 그대로 복제해서 하단에 붙여넣으시면 됩니다.)
+        function resize() {
+            if(!canvas.parentElement) return;
+            width = canvas.parentElement.clientWidth;
+            height = canvas.parentElement.clientHeight;
+            canvas.width = width; canvas.height = height;
+        }
+
+        /* --- LEGACY FUNCTIONS (Design & Other Views) --- */
+        function switchView(name) {
+            document.querySelectorAll('.view-section').forEach(v => v.classList.add('hidden-view'));
+            document.getElementById('view-' + name).classList.remove('hidden-view');
+            document.querySelectorAll('.nav-item, .mobile-nav-item').forEach(n => n.classList.remove('active'));
+            document.querySelectorAll('.nav-item-' + name).forEach(n => n.classList.add('active'));
+            document.getElementById('header-title').innerText = {home:'나의 정서 보호', journal:'감정 기록 일지', healing:'스트레스 케어', settings:'환경 설정', mypage:'마이페이지'}[name];
+            if(name === 'home') setTimeout(resize, 100);
+        }
+
+        let journalData = { 16: { mood: 'anxious', text: "회의 중 심박수가 급상승함.", icon: "😰" } };
+        function renderCalendar() {
+            const grid = document.getElementById('calendar-grid'); grid.innerHTML = '';
+            for(let i=1; i<=31; i++) {
+                let data = journalData[i];
+                let color = data ? (data.mood==='happy'?'bg-blue-50':'bg-orange-50') : 'bg-white/50';
+                grid.innerHTML += `<div onclick="loadJournal(${i})" class="${color} p-2 rounded-lg border text-center text-xs calendar-day" id="day-${i}">${i}${data?data.icon:''}</div>`;
+            }
+        }
+
+        function loadJournal(day) {
+            document.getElementById('journal-date-title').innerText = `12월 ${day}일 기록`;
+            let data = journalData[day];
+            document.getElementById('journal-textarea').value = data ? data.text : '';
+            document.getElementById('btn-delete').classList.toggle('hidden', !data);
+        }
+
+        function saveJournal() { alert("저장되었습니다."); }
+        function selectMood(m) { 
+            document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('selected'));
+            document.getElementById('mood-'+m).classList.add('selected');
+        }
+
+        function toggleData(t) {
+            const circle = document.getElementById('circle-'+t);
+            const bg = document.getElementById('toggle-'+t);
+            const isRight = circle.classList.contains('right-1');
+            circle.classList.toggle('right-1', !isRight); circle.classList.toggle('left-1', isRight);
+            bg.classList.toggle('bg-green-500', !isRight); bg.classList.toggle('bg-slate-300', isRight);
+        }
+
+        window.addEventListener('resize', resize);
+        window.onload = () => {
+            loadAnalysisData();
+            renderCalendar();
+            resize();
+        };
     </script>
 </body>
 </html>
