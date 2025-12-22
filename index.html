@@ -74,6 +74,45 @@
         /* 상태 점 */
         .status-dot-good { background-color: #22c55e; box-shadow: 0 0 10px rgba(34, 197, 94, 0.4); }
         .status-dot-warning { background-color: #f97316; box-shadow: 0 0 10px rgba(249, 115, 22, 0.4); }
+
+        /* 스위치 토글 스타일 (CSS 처리) */
+        .toggle-track {
+            width: 3rem;
+            height: 1.5rem;
+            background-color: #cbd5e1; /* slate-300 */
+            border-radius: 9999px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        .toggle-thumb {
+            width: 1.25rem;
+            height: 1.25rem;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 0.125rem;
+            left: 0.125rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        /* Checked state classes (JS will toggle these) */
+        .toggle-track.toggle-active {
+            background-color: #3b82f6; /* blue-500 default */
+        }
+       .toggle-track.toggle-active.red { background-color: #ef4444; }
+       .toggle-track.toggle-active.green { background-color: #22c55e; }
+        
+        .toggle-active .toggle-thumb {
+            transform: translateX(1.5rem);
+        }
+        
+        /* 비활성화 상태 스타일 */
+        .disabled-area {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+        }
     </style>
 </head>
 <body class="h-screen flex overflow-hidden selection:bg-blue-100 selection:text-blue-900">
@@ -244,7 +283,7 @@
                                     <span class="text-sm font-bold text-slate-800">14:00 - 오후 활동 정상</span>
                                     <span class="text-[10px] bg-green-100 text-green-600 px-1.5 py-0.5 rounded">Routine Good</span>
                                 </div>
-                                <p class="text-xs text-slate-500">예상되는 밭일 시간(13:00~17:00)에 맞춰 뇌파 활동성과 심박수가 적절히 상승했습니다.</p>
+                                <p class="text-xs text-slate-500">예상되는 활동 시간(13:00~17:00)에 맞춰 신체 활동량이 적절히 상승했습니다.</p>
                             </div>
                         </div>
                         <div class="relative opacity-80">
@@ -337,10 +376,10 @@
                                 <p class="text-xs text-blue-600 mt-1 text-right font-medium" id="text-wakeup">오늘: 06:15 (정상)</p>
                             </div>
 
-                            <!-- Item 2: Activity Level -->
+                            <!-- Item 2: Activity Level (용어 변경됨) -->
                             <div class="relative">
                                 <div class="flex justify-between text-sm mb-2">
-                                    <span class="font-bold text-slate-700"><i class="fa-solid fa-person-digging text-green-600 mr-2"></i>오전 농작업 활성도</span>
+                                    <span class="font-bold text-slate-700"><i class="fa-solid fa-person-walking text-green-600 mr-2"></i>오전 신체 활동량</span>
                                     <span class="text-slate-500">평소 높음(Beta파)</span>
                                 </div>
                                 <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden relative flex">
@@ -376,39 +415,104 @@
                 </div>
             </div>
 
-            <!-- VIEW 4: SETTINGS -->
+            <!-- VIEW 4: SETTINGS (Modified with Advanced Alerts) -->
             <div id="view-settings" class="view-section hidden-view fade-in max-w-2xl mx-auto">
                 <div class="glass-card p-8">
-                    <h2 class="text-xl text-slate-800 font-bold mb-6">보호자 알림 설정</h2>
-                    <div class="space-y-8">
+                    <h2 class="text-xl text-slate-800 font-bold mb-6">보호자 및 자동 신고 설정</h2>
+                    
+                    <div class="space-y-10">
+                        <!-- 섹션 1: 루틴 감도 -->
                         <div>
                             <div class="flex justify-between mb-2">
                                 <label class="text-slate-700 font-medium">루틴 이탈 민감도</label>
-                                <span class="text-blue-600 font-bold">보통</span>
+                                <span id="routine-sensitivity-label" class="text-blue-600 font-bold">보통</span>
                             </div>
-                            <input type="range" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-500" min="1" max="100" value="50">
+                            <input id="routine-sensitivity-slider" type="range" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-500" min="1" max="100" value="50" oninput="updateSensitivity(this.value)">
                             <p class="text-xs text-slate-500 mt-2">평소 기상 시간보다 1시간 이상 늦어지면 알림을 보냅니다.</p>
                         </div>
                         
+                        <!-- 섹션 2: 비상 연락망 및 자동 신고 -->
                         <div class="pt-6 border-t border-slate-200">
-                            <h3 class="text-slate-700 font-medium mb-4">비상 연락망</h3>
-                            <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg mb-3">
-                                <div>
-                                    <p class="text-sm font-bold text-slate-800">큰아들 (본인)</p>
-                                    <p class="text-xs text-slate-500">010-1234-5678</p>
+                            <h3 class="text-slate-700 font-bold mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-bell text-orange-500"></i> 자동 알림 및 신고 권한
+                            </h3>
+                            <p class="text-xs text-slate-400 mb-4 bg-slate-50 p-2 rounded">
+                                * 오작동 방지를 위해 자동 신고 조건은 보수적으로 설정하는 것을 권장합니다.
+                            </p>
+
+                            <!-- 119 자동 신고 -->
+                            <div class="mb-4 bg-red-50 border border-red-100 rounded-xl overflow-hidden">
+                                <div onclick="toggleSwitch('toggle-119')" class="flex items-center justify-between p-4 bg-red-50 cursor-pointer hover:bg-red-100/50 transition-colors">
+                                    <div>
+                                        <p class="text-sm font-bold text-red-600">🚑 119 자동 긴급 신고</p>
+                                        <p class="text-xs text-slate-500">의식 불명/심정지 의심 시 자동 연결</p>
+                                    </div>
+                                    <div id="toggle-119" class="toggle-track">
+                                        <div class="toggle-thumb"></div>
+                                    </div>
                                 </div>
-                                <button class="text-xs bg-white border border-slate-300 px-3 py-1 rounded shadow-sm text-slate-600">수정</button>
+                                <div id="options-119" class="p-4 text-xs space-y-2 border-t border-red-100 bg-white/50 disabled-area">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-slate-600">자동 신고 트리거</span>
+                                        <select class="bg-white border border-slate-300 rounded px-2 py-1 text-slate-700">
+                                            <option>심각함 (의식소실+심박급증)</option>
+                                            <option>매우 위급 (심정지 의심)</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-slate-600">신고 전 대기시간 (골든타임)</span>
+                                        <select class="bg-white border border-slate-300 rounded px-2 py-1 text-slate-700">
+                                            <option>1분 대기 (권장)</option>
+                                            <option>3분 대기</option>
+                                            <option>즉시 신고</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg">
-                                <div>
-                                    <p class="text-sm font-bold text-slate-800">이장님 (마을)</p>
-                                    <p class="text-xs text-slate-500">010-9876-5432</p>
+
+                            <!-- 보호자 알림 -->
+                            <div class="mb-4 bg-blue-50 border border-blue-100 rounded-xl overflow-hidden">
+                                <div onclick="toggleSwitch('toggle-son')" class="flex items-center justify-between p-4 bg-blue-50 cursor-pointer hover:bg-blue-100/50 transition-colors">
+                                    <div>
+                                        <p class="text-sm font-bold text-slate-800">큰아들 (본인)</p>
+                                        <p class="text-xs text-slate-500">010-1234-5678</p>
+                                    </div>
+                                    <div id="toggle-son" class="toggle-track toggle-active">
+                                        <div class="toggle-thumb"></div>
+                                    </div>
                                 </div>
-                                <div class="relative inline-block w-10 align-middle select-none">
-                                    <div class="w-10 h-5 bg-green-500 rounded-full shadow-inner"></div>
-                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full shadow"></div>
+                                <div class="p-4 flex justify-between items-center text-xs bg-white/50 border-t border-blue-100">
+                                    <span class="text-slate-600">알림 수신 기준</span>
+                                    <div class="flex gap-2">
+                                        <span class="text-blue-600 font-bold bg-white px-2 py-1 rounded border border-blue-100">모든 이상 징후 (루틴 이탈 포함)</span>
+                                        <button onclick="editContact('큰아들')" class="text-xs bg-white border border-slate-300 px-2 py-1 rounded shadow-sm text-slate-600 hover:bg-slate-50">수정</button>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- 이장님/지인 알림 -->
+                            <div class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden">
+                                <div onclick="toggleSwitch('toggle-neighbor')" class="flex items-center justify-between p-4 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors">
+                                    <div>
+                                        <p class="text-sm font-bold text-slate-800">이장님 (마을)</p>
+                                        <p class="text-xs text-slate-500">010-9876-5432</p>
+                                    </div>
+                                    <div id="toggle-neighbor" class="toggle-track green">
+                                        <div class="toggle-thumb"></div>
+                                    </div>
+                                </div>
+                                <div id="options-neighbor" class="p-4 flex justify-between items-center text-xs bg-white/50 border-t border-slate-200 disabled-area">
+                                    <span class="text-slate-600">알림 수신 기준</span>
+                                    <div class="flex gap-2">
+                                        <select class="bg-white border border-slate-300 rounded px-2 py-1 text-slate-700">
+                                            <option>보호자 연락 두절 시에만</option>
+                                            <option>긴급 상황(실신 등) 시 즉시</option>
+                                        </select>
+                                        <button onclick="editContact('이장님')" class="text-xs bg-white border border-slate-300 px-2 py-1 rounded shadow-sm text-slate-600 hover:bg-slate-50">수정</button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -444,6 +548,48 @@
             document.getElementById('header-title').innerText = titleMap[viewName];
             
             if(viewName === 'home') requestAnimationFrame(draw);
+        }
+        
+        // --- Settings Logic (Direct Handlers) ---
+        function updateSensitivity(val) {
+            const label = document.getElementById('routine-sensitivity-label');
+            let text = "보통";
+            let colorClass = "text-blue-600";
+            
+            if (val < 33) {
+                text = "둔감";
+                colorClass = "text-green-600";
+            } else if (val > 66) {
+                text = "민감";
+                colorClass = "text-orange-500";
+            }
+            
+            label.innerText = text;
+            label.className = `${colorClass} font-bold`;
+        }
+
+        function toggleSwitch(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('toggle-active');
+            
+            // 색상 클래스 추가 (Visual Feedback)
+            if(id === 'toggle-119') {
+                element.classList.toggle('red');
+                const options = document.getElementById('options-119');
+                if(element.classList.contains('toggle-active')) options.classList.remove('disabled-area');
+                else options.classList.add('disabled-area');
+            } 
+            else if(id === 'toggle-neighbor') {
+                element.classList.toggle('green');
+                const options = document.getElementById('options-neighbor');
+                if(element.classList.contains('toggle-active')) options.classList.remove('disabled-area');
+                else options.classList.add('disabled-area');
+            }
+        }
+
+        // 3. Edit Buttons
+        window.editContact = function(name) {
+            alert(`'${name}' 연락처 수정 팝업이 뜹니다. (기능 준비중)`);
         }
 
         // --- Routine Calendar Logic ---
