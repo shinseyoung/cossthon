@@ -1174,14 +1174,6 @@
         // Start Loading Data
         loadAnalysisData();
 
-        setTimeout(() => { 
-            const gauge = document.getElementById('suppressGauge'); 
-            if(gauge) {
-                gauge.style.strokeDasharray = "283"; 
-                gauge.style.strokeDashoffset = "50"; 
-            } 
-        }, 500);
-
         const chartCtx = document.getElementById('resilienceChart').getContext('2d');
         const suppressionData = [15, 30, 50, 75, 90, 45];
 
@@ -1269,3 +1261,4 @@
     </script>
 </body>
 </html>
+
