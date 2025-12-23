@@ -305,9 +305,9 @@
                             <circle id="suppressGauge" cx="50%" cy="50%" r="45%" stroke="#fb923c" stroke-width="12" fill="transparent" stroke-dasharray="0" stroke-dashoffset="0" stroke-linecap="round" class="transition-all duration-1000"/>
                         </svg>
                         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center flex flex-col items-center">
-                            <span class="text-4xl lg:text-5xl font-bold text-slate-800 block mb-1">82</span>
+                            <span id="suppression-value" class="text-4xl lg:text-5xl font-bold text-slate-800 block mb-1">82</span>
                             <span class="text-xs text-slate-400">/ 100</span>
-                            <span class="mt-2 text-[10px] whitespace-nowrap font-bold text-white px-3 py-1 rounded-full bg-orange-400 shadow-sm">매우 높음</span>
+                            <span id="suppression-label"class="mt-2 text-[10px] whitespace-nowrap font-bold text-white px-3 py-1 rounded-full bg-orange-400 shadow-sm">매우 높음</span>
                         </div>
                     </div>
                     <div class="w-full z-10 relative">
@@ -605,6 +605,50 @@
     </main>
 
     <script>
+        /* =================================================
+        Suppression Index UI Binding (FINAL)
+        cossthon.py → analysis_result.json 연동
+        ================================================= */
+
+        function updateSuppressionUI(value) {
+        if (value === null || value === undefined) return;
+
+        const gauge = document.getElementById("suppressGauge");
+        const valueEl = document.getElementById("suppression-value");
+        const labelEl = document.getElementById("suppression-label");
+
+        if (!gauge || !valueEl || !labelEl) return;
+
+        const radius = 70; // 기존 SVG 반지름 (원본 HTML 기준)
+        const circumference = 2 * Math.PI * radius;
+        const offset = circumference * (1 - value / 100);
+
+        gauge.style.strokeDasharray = circumference;
+        gauge.style.strokeDashoffset = offset;
+
+        valueEl.innerText = Math.round(value);
+
+        let label = "";
+        let color = "";
+
+        if (value < 30) {
+            label = "낮음";
+            color = "#60a5fa";
+        } else if (value < 60) {
+            label = "보통";
+            color = "#3b82f6";
+        } else if (value < 80) {
+            label = "높음";
+            color = "#fb923c";
+        } else {
+            label = "매우 높음";
+            color = "#ef4444";
+        }
+        gauge.style.stroke = color;
+        labelEl.innerText = label;
+        labelEl.style.backgroundColor = color;
+        }
+        
         // --- View Switching ---
         function switchView(viewName) {
             const views = document.querySelectorAll('.view-section');
@@ -940,7 +984,7 @@
         let simulationData = [];
         let simulationIndex = 0; // Current time index in data
         let lastTimestamp = 0;
-        const PLAY_SPEED_MS = 100; // Update chart every 100ms (10fps for data progression)
+        const PLAY_SPEED_MS = 300; // Update chart every 100ms (10fps for data progression)
         
         function resize() {
             if(!canvas.parentElement) return;
@@ -1107,16 +1151,24 @@
         }
 
         function updateLiveStats(dataPoint) {
-            if(!dataPoint || !dataPoint.eeg_data) return;
-            
-            const hr = Math.round(dataPoint.eeg_data.HR);
-            const alpha = dataPoint.eeg_data.alpha ? dataPoint.eeg_data.alpha.toFixed(2) : "--";
+            if (!dataPoint) return;
 
-            const hrEl = document.getElementById('live-hr');
-            if(hrEl) hrEl.innerText = hr;
+            // 기존 HR / Alpha
+            if (dataPoint.eeg_data) {
+                const hr = Math.round(dataPoint.eeg_data.HR);
+                const alpha = dataPoint.eeg_data.alpha?.toFixed(2) ?? "--";
 
-            const alphaEl = document.getElementById('live-alpha');
-            if(alphaEl) alphaEl.innerText = alpha;
+                const hrEl = document.getElementById('live-hr');
+                if (hrEl) hrEl.innerText = hr;
+
+                const alphaEl = document.getElementById('live-alpha');
+                if (alphaEl) alphaEl.innerText = alpha;
+            }
+
+            // ✅ 여기 추가 (억눌림 지수)
+            if (typeof dataPoint.suppression_index === "number") {
+                updateSuppressionUI(dataPoint.suppression_index);
+            }
         }
 
         // Start Loading Data
