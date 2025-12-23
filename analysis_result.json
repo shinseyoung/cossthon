@@ -3,9 +3,9 @@
     {
       "timestamp": 0,
       "raw_signals": {
-        "fp1_mean": 0.012579589260454029,
-        "fp2_mean": 0.013584200221193042,
-        "ppg": 0.0017701411266479177
+        "fp1_mean": 0.0078938008092593,
+        "fp2_mean": -0.00018734148525520987,
+        "ppg": 0.00020862981993392807
       },
       "eeg_data": {
         "alpha": null,
@@ -22,14 +22,15 @@
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": null
     },
     {
       "timestamp": 1,
       "raw_signals": {
-        "fp1_mean": 0.02023028477510751,
-        "fp2_mean": 0.014357822859677035,
-        "ppg": 0.0005795760370738793
+        "fp1_mean": 0.008918880803380779,
+        "fp2_mean": 0.014261737924173346,
+        "ppg": 0.00044901212730202785
       },
       "eeg_data": {
         "alpha": null,
@@ -46,14 +47,15 @@
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": null
     },
     {
       "timestamp": 2,
       "raw_signals": {
-        "fp1_mean": 0.010853420810761927,
-        "fp2_mean": 0.017227719234843106,
-        "ppg": 0.0005617557173704085
+        "fp1_mean": 0.01773816737959013,
+        "fp2_mean": 0.02247704622239069,
+        "ppg": 0.0013080761535556157
       },
       "eeg_data": {
         "alpha": null,
@@ -70,638 +72,815 @@
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": null
     },
     {
       "timestamp": 3,
       "raw_signals": {
-        "fp1_mean": 0.014231691893371971,
-        "fp2_mean": 0.010584508382705134,
-        "ppg": 0.001425958253458909
+        "fp1_mean": 0.009693437556420739,
+        "fp2_mean": 0.026173387068770128,
+        "ppg": 0.0017888204046461686
       },
       "eeg_data": {
-        "alpha": 0.48,
-        "beta": 0.42,
-        "gamma": 0.1,
+        "alpha": 0.3,
+        "beta": 0.64,
+        "gamma": 0.05,
         "HR": null
       },
       "russell": {
-        "valence": -0.36837330227545173,
-        "arousal": 0.11276568006566087,
-        "emotion": "Bored"
+        "valence": -0.5115146328617771,
+        "arousal": 0.16291969958469607,
+        "emotion": "Nervous"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": null
     },
     {
       "timestamp": 4,
       "raw_signals": {
-        "fp1_mean": 0.005933849671239673,
-        "fp2_mean": 0.023115034582423713,
-        "ppg": 0.00042752858767251486
+        "fp1_mean": 0.013397131398687322,
+        "fp2_mean": 0.008423677118984459,
+        "ppg": 0.0001181237352483845
       },
       "eeg_data": {
-        "alpha": 0.73,
-        "beta": 0.24,
-        "gamma": 0.04,
+        "alpha": 0.36,
+        "beta": 0.59,
+        "gamma": 0.06,
         "HR": 72
       },
       "russell": {
-        "valence": -0.10215117054846723,
-        "arousal": 0.07735615561580456,
+        "valence": -0.3642939872540691,
+        "arousal": 0.14241849024827144,
         "emotion": "Bored"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": null
     },
     {
       "timestamp": 5,
       "raw_signals": {
-        "fp1_mean": 0.014222045381436375,
-        "fp2_mean": 0.014881208866121778,
-        "ppg": 0.0002349379949904198
+        "fp1_mean": 0.006203189327128454,
+        "fp2_mean": 0.02685983949952471,
+        "ppg": 0.0014662947494495627
       },
       "eeg_data": {
-        "alpha": 0.75,
-        "beta": 0.22,
-        "gamma": 0.03,
-        "HR": 71
+        "alpha": 0.35,
+        "beta": 0.58,
+        "gamma": 0.07,
+        "HR": 72
       },
       "russell": {
-        "valence": -0.14876223533522165,
-        "arousal": 0.07286298825475117,
-        "emotion": "Bored"
+        "valence": -0.3550700289231186,
+        "arousal": 0.16367440099415595,
+        "emotion": "Nervous"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": null
     },
     {
       "timestamp": 6,
       "raw_signals": {
-        "fp1_mean": 0.030290887524651342,
-        "fp2_mean": -0.002020126586704491,
-        "ppg": 0.0003724985625291813
+        "fp1_mean": 0.00875109420109342,
+        "fp2_mean": 0.03008759086281327,
+        "ppg": 0.0008718662734668846
       },
       "eeg_data": {
-        "alpha": 0.75,
+        "alpha": 0.43,
+        "beta": 0.51,
+        "gamma": 0.06,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.3612419741442951,
+        "arousal": 0.1395794538235659,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 7,
+      "raw_signals": {
+        "fp1_mean": 0.019903186107398805,
+        "fp2_mean": 0.00725473331695972,
+        "ppg": 0.00016997336459954909
+      },
+      "eeg_data": {
+        "alpha": 0.47,
+        "beta": 0.45,
+        "gamma": 0.08,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.3802500442992598,
+        "arousal": 0.10157683145723281,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 8,
+      "raw_signals": {
+        "fp1_mean": 0.010589137600758951,
+        "fp2_mean": 0.017703316095855886,
+        "ppg": 0.0014231113525324272
+      },
+      "eeg_data": {
+        "alpha": 0.46,
+        "beta": 0.45,
+        "gamma": 0.09,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.4764166428210386,
+        "arousal": 0.09490792794912797,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 9,
+      "raw_signals": {
+        "fp1_mean": 0.005056201479083043,
+        "fp2_mean": 0.020766664851096475,
+        "ppg": 0.0014976327751536637
+      },
+      "eeg_data": {
+        "alpha": 0.5,
+        "beta": 0.4,
+        "gamma": 0.1,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.45111717850655725,
+        "arousal": 0.07669925521268761,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 10,
+      "raw_signals": {
+        "fp1_mean": 0.03384767736525748,
+        "fp2_mean": 0.030993040894524114,
+        "ppg": 0.0017059011368080012
+      },
+      "eeg_data": {
+        "alpha": 0.59,
+        "beta": 0.32,
+        "gamma": 0.09,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.18657187020997046,
+        "arousal": 0.07698517200828656,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 11,
+      "raw_signals": {
+        "fp1_mean": 0.017066398661519183,
+        "fp2_mean": 0.005702752538955638,
+        "ppg": 0.00025327836449515
+      },
+      "eeg_data": {
+        "alpha": 0.56,
+        "beta": 0.34,
+        "gamma": 0.09,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.15408063386100568,
+        "arousal": 0.08674109120385037,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 12,
+      "raw_signals": {
+        "fp1_mean": 0.0014786321288823752,
+        "fp2_mean": 0.03510653823382127,
+        "ppg": 0.0008122358032890641
+      },
+      "eeg_data": {
+        "alpha": 0.71,
+        "beta": 0.23,
+        "gamma": 0.06,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.08839962623405107,
+        "arousal": 0.06911284004601771,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 13,
+      "raw_signals": {
+        "fp1_mean": 0.01548059366590732,
+        "fp2_mean": 0.013552274827833756,
+        "ppg": 0.0015776927398375093
+      },
+      "eeg_data": {
+        "alpha": 0.79,
+        "beta": 0.17,
+        "gamma": 0.04,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.03018221520105993,
+        "arousal": 0.04935186613621241,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": null
+    },
+    {
+      "timestamp": 14,
+      "raw_signals": {
+        "fp1_mean": 0.02980732113468608,
+        "fp2_mean": 0.0015167790250740325,
+        "ppg": 0.0004848558622099343
+      },
+      "eeg_data": {
+        "alpha": 0.63,
+        "beta": 0.31,
+        "gamma": 0.05,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.21520613936429622,
+        "arousal": 0.07519105044596112,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 68.9
+    },
+    {
+      "timestamp": 15,
+      "raw_signals": {
+        "fp1_mean": 0.017922202168588003,
+        "fp2_mean": 0.00836903716117994,
+        "ppg": 0.0012403511251772527
+      },
+      "eeg_data": {
+        "alpha": 0.63,
+        "beta": 0.32,
+        "gamma": 0.05,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.19766650501314437,
+        "arousal": 0.08041382311448929,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 93.0
+    },
+    {
+      "timestamp": 16,
+      "raw_signals": {
+        "fp1_mean": 0.03592135042656882,
+        "fp2_mean": 0.028180442118893263,
+        "ppg": 0.0016645490653146107
+      },
+      "eeg_data": {
+        "alpha": 0.65,
+        "beta": 0.31,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.10102178528256615,
+        "arousal": 0.08037369342615726,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 82.0
+    },
+    {
+      "timestamp": 17,
+      "raw_signals": {
+        "fp1_mean": 0.02698570010555245,
+        "fp2_mean": 0.028220122358306936,
+        "ppg": 0.0007786217526064053
+      },
+      "eeg_data": {
+        "alpha": 0.76,
         "beta": 0.22,
         "gamma": 0.03,
         "HR": 71
       },
       "russell": {
-        "valence": -0.11656140254536945,
-        "arousal": 0.07291303573493907,
-        "emotion": "Bored"
+        "valence": -0.07227817545683174,
+        "arousal": 0.06552619748692232,
+        "emotion": "Depressed"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": 71.0
     },
     {
-      "timestamp": 7,
+      "timestamp": 18,
       "raw_signals": {
-        "fp1_mean": 0.019465116136112938,
-        "fp2_mean": 0.020329506794435584,
-        "ppg": 0.0005159217786071017
+        "fp1_mean": 0.02438238197735794,
+        "fp2_mean": 0.01855629999623347,
+        "ppg": 0.0009488244464686857
       },
       "eeg_data": {
-        "alpha": 0.73,
-        "beta": 0.25,
-        "gamma": 0.03,
+        "alpha": 0.85,
+        "beta": 0.13,
+        "gamma": 0.02,
         "HR": 71
       },
       "russell": {
-        "valence": -0.12898461603729122,
-        "arousal": 0.0884241741196274,
-        "emotion": "Bored"
+        "valence": -0.07435902209463918,
+        "arousal": 0.04210073811396749,
+        "emotion": "Depressed"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": 62.4
     },
     {
-      "timestamp": 8,
+      "timestamp": 19,
       "raw_signals": {
-        "fp1_mean": 0.01609376906730773,
-        "fp2_mean": 0.0004953465981474749,
-        "ppg": 5.9089159063133314e-05
+        "fp1_mean": 0.0037189983151676882,
+        "fp2_mean": 0.0033229145276939126,
+        "ppg": 0.0006063323171222085
       },
       "eeg_data": {
-        "alpha": 0.47,
-        "beta": 0.47,
-        "gamma": 0.06,
-        "HR": 70
+        "alpha": 0.84,
+        "beta": 0.15,
+        "gamma": 0.02,
+        "HR": 71
       },
       "russell": {
-        "valence": -0.44804540692886535,
-        "arousal": 0.11879080133891184,
+        "valence": -0.032636232598575454,
+        "arousal": 0.05257460607927298,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 58.1
+    },
+    {
+      "timestamp": 20,
+      "raw_signals": {
+        "fp1_mean": 0.030997023503622316,
+        "fp2_mean": 0.006366104982571228,
+        "ppg": 0.00026868447335546056
+      },
+      "eeg_data": {
+        "alpha": 0.85,
+        "beta": 0.14,
+        "gamma": 0.01,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.0846637956286174,
+        "arousal": 0.05231223904820509,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 56.9
+    },
+    {
+      "timestamp": 21,
+      "raw_signals": {
+        "fp1_mean": 0.010212532491866485,
+        "fp2_mean": 0.0044198353539587915,
+        "ppg": 0.0017873031437739926
+      },
+      "eeg_data": {
+        "alpha": 0.78,
+        "beta": 0.2,
+        "gamma": 0.02,
+        "HR": 72
+      },
+      "russell": {
+        "valence": 0.10035937991121013,
+        "arousal": 0.07369076256350272,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 81.2
+    },
+    {
+      "timestamp": 22,
+      "raw_signals": {
+        "fp1_mean": 0.011373994503766445,
+        "fp2_mean": 0.014960323449230116,
+        "ppg": 0.00026492773657334955
+      },
+      "eeg_data": {
+        "alpha": 0.65,
+        "beta": 0.31,
+        "gamma": 0.05,
+        "HR": 72
+      },
+      "russell": {
+        "valence": 0.11253842502829878,
+        "arousal": 0.10561753417649872,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 75.2
+    },
+    {
+      "timestamp": 23,
+      "raw_signals": {
+        "fp1_mean": 0.01644021120607992,
+        "fp2_mean": 0.008139749486401044,
+        "ppg": 0.00030998511924772566
+      },
+      "eeg_data": {
+        "alpha": 0.6,
+        "beta": 0.34,
+        "gamma": 0.06,
+        "HR": 72
+      },
+      "russell": {
+        "valence": 0.093578612186631,
+        "arousal": 0.10389288192873217,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 67.8
+    },
+    {
+      "timestamp": 24,
+      "raw_signals": {
+        "fp1_mean": 0.009870460042108812,
+        "fp2_mean": 0.018218096817994557,
+        "ppg": 0.00040086260417361396
+      },
+      "eeg_data": {
+        "alpha": 0.33,
+        "beta": 0.57,
+        "gamma": 0.1,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.41529192200444814,
+        "arousal": 0.12210094018654404,
         "emotion": "Bored"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": 74.9
     },
     {
-      "timestamp": 9,
+      "timestamp": 25,
       "raw_signals": {
-        "fp1_mean": 0.013191680340554566,
-        "fp2_mean": 0.02152615829690953,
-        "ppg": 0.0006915254027763658
+        "fp1_mean": 0.014179623051774939,
+        "fp2_mean": 0.024339990852061427,
+        "ppg": 0.00048647195906975486
       },
       "eeg_data": {
-        "alpha": 0.48,
+        "alpha": 0.27,
+        "beta": 0.63,
+        "gamma": 0.1,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.5930739413549977,
+        "arousal": 0.13770412987348568,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": null,
+        "load": null,
+        "state": null
+      },
+      "suppression_index": 83.5
+    },
+    {
+      "timestamp": 26,
+      "raw_signals": {
+        "fp1_mean": 0.04340925570405496,
+        "fp2_mean": 0.010376039893982482,
+        "ppg": 0.0009349755136868254
+      },
+      "eeg_data": {
+        "alpha": 0.49,
         "beta": 0.45,
         "gamma": 0.06,
         "HR": 71
       },
       "russell": {
-        "valence": -0.3966042076951261,
-        "arousal": 0.12013880552884076,
+        "valence": -0.44900841146253,
+        "arousal": 0.10652372965804083,
         "emotion": "Bored"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
-    },
-    {
-      "timestamp": 10,
-      "raw_signals": {
-        "fp1_mean": 0.006796623933106987,
-        "fp2_mean": 0.03015273970665743,
-        "ppg": 0.0016819120014000028
       },
-      "eeg_data": {
-        "alpha": 0.51,
-        "beta": 0.44,
-        "gamma": 0.05,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.1840812145194386,
-        "arousal": 0.12601360671047473,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 11,
-      "raw_signals": {
-        "fp1_mean": 0.023182784442357114,
-        "fp2_mean": 0.023130790978669324,
-        "ppg": 0.0001350335119734309
-      },
-      "eeg_data": {
-        "alpha": 0.67,
-        "beta": 0.29,
-        "gamma": 0.04,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.29621384155473396,
-        "arousal": 0.06546018695911038,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 12,
-      "raw_signals": {
-        "fp1_mean": 0.02138973113824761,
-        "fp2_mean": 0.0023768593979570964,
-        "ppg": 0.0010139267376980845
-      },
-      "eeg_data": {
-        "alpha": 0.65,
-        "beta": 0.3,
-        "gamma": 0.05,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.2693428530369225,
-        "arousal": 0.071403288520971,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 13,
-      "raw_signals": {
-        "fp1_mean": 0.03140219877449854,
-        "fp2_mean": 0.02339297756136224,
-        "ppg": 0.0014875328402782434
-      },
-      "eeg_data": {
-        "alpha": 0.82,
-        "beta": 0.16,
-        "gamma": 0.03,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.04860374067123088,
-        "arousal": 0.05436186270958934,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 14,
-      "raw_signals": {
-        "fp1_mean": 0.03270755207770152,
-        "fp2_mean": -0.0003679320838017811,
-        "ppg": 0.0005074499197350162
-      },
-      "eeg_data": {
-        "alpha": 0.79,
-        "beta": 0.18,
-        "gamma": 0.03,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.12276170164116532,
-        "arousal": 0.05607516590918718,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 15,
-      "raw_signals": {
-        "fp1_mean": 0.014845987550497108,
-        "fp2_mean": 0.007313842013541915,
-        "ppg": 0.0010170121610753903
-      },
-      "eeg_data": {
-        "alpha": 0.7,
-        "beta": 0.25,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.058062758082164156,
-        "arousal": 0.08628366841117727,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 16,
-      "raw_signals": {
-        "fp1_mean": 0.020802252185680655,
-        "fp2_mean": 0.003154755072534758,
-        "ppg": 0.0012623884881903956
-      },
-      "eeg_data": {
-        "alpha": 0.79,
-        "beta": 0.18,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.02298472320517722,
-        "arousal": 0.0573296577917092,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 17,
-      "raw_signals": {
-        "fp1_mean": 0.021768654151361956,
-        "fp2_mean": 0.027486351523280994,
-        "ppg": 0.0017070697654345498
-      },
-      "eeg_data": {
-        "alpha": 0.47,
-        "beta": 0.47,
-        "gamma": 0.06,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.26691510991504114,
-        "arousal": 0.12459397017985634,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 18,
-      "raw_signals": {
-        "fp1_mean": 0.018924603796161052,
-        "fp2_mean": 0.027163547495753535,
-        "ppg": 0.0006398456097355067
-      },
-      "eeg_data": {
-        "alpha": 0.4,
-        "beta": 0.53,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.2341042493236544,
-        "arousal": 0.13796797436190683,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 19,
-      "raw_signals": {
-        "fp1_mean": -0.0006723885809678011,
-        "fp2_mean": 0.016783250317684194,
-        "ppg": 0.0009452843675345091
-      },
-      "eeg_data": {
-        "alpha": 0.43,
-        "beta": 0.5,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.28257883149690677,
-        "arousal": 0.1187699203041282,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 20,
-      "raw_signals": {
-        "fp1_mean": 0.012027068418841273,
-        "fp2_mean": 0.004395417705719872,
-        "ppg": 0.0014109330280912726
-      },
-      "eeg_data": {
-        "alpha": 0.52,
-        "beta": 0.43,
-        "gamma": 0.05,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.2693014822063808,
-        "arousal": 0.10506724208495744,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 21,
-      "raw_signals": {
-        "fp1_mean": 0.0017363502647701305,
-        "fp2_mean": 0.0022712038388748206,
-        "ppg": 0.0015711846476722019
-      },
-      "eeg_data": {
-        "alpha": 0.68,
-        "beta": 0.27,
-        "gamma": 0.05,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.24692922830660807,
-        "arousal": 0.05482288976501432,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 22,
-      "raw_signals": {
-        "fp1_mean": 0.014185024962298357,
-        "fp2_mean": 0.0025286701386365274,
-        "ppg": 0.0006773913519960255
-      },
-      "eeg_data": {
-        "alpha": 0.74,
-        "beta": 0.22,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.3870737004167985,
-        "arousal": 0.038999256554603144,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 23,
-      "raw_signals": {
-        "fp1_mean": 0.02468028681421474,
-        "fp2_mean": 0.00189927666268841,
-        "ppg": 0.00015365722285282834
-      },
-      "eeg_data": {
-        "alpha": 0.87,
-        "beta": 0.11,
-        "gamma": 0.02,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.0043601754700457185,
-        "arousal": 0.031058968224511777,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 24,
-      "raw_signals": {
-        "fp1_mean": 0.02123549235866612,
-        "fp2_mean": 0.010253136167388266,
-        "ppg": 0.0016260039745112378
-      },
-      "eeg_data": {
-        "alpha": 0.8,
-        "beta": 0.18,
-        "gamma": 0.03,
-        "HR": 72
-      },
-      "russell": {
-        "valence": 0.026986788878628515,
-        "arousal": 0.04848947711229941,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 25,
-      "raw_signals": {
-        "fp1_mean": 0.028196773890012437,
-        "fp2_mean": 0.011494260831660611,
-        "ppg": 0.000951363946323334
-      },
-      "eeg_data": {
-        "alpha": 0.72,
-        "beta": 0.24,
-        "gamma": 0.04,
-        "HR": 72
-      },
-      "russell": {
-        "valence": 0.00445021412346383,
-        "arousal": 0.06737547006821205,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
-    },
-    {
-      "timestamp": 26,
-      "raw_signals": {
-        "fp1_mean": 0.021695702436627586,
-        "fp2_mean": 0.005958462782853196,
-        "ppg": 0.0008186821248595923
-      },
-      "eeg_data": {
-        "alpha": 0.56,
-        "beta": 0.38,
-        "gamma": 0.06,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.052421278063497195,
-        "arousal": 0.111469243488244,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": null,
-        "load": null,
-        "state": null
-      }
+      "suppression_index": 82.3
     },
     {
       "timestamp": 27,
       "raw_signals": {
-        "fp1_mean": 0.03198857747812937,
-        "fp2_mean": 0.005075889093822768,
-        "ppg": 0.0013868381990179237
+        "fp1_mean": 0.017249277199003078,
+        "fp2_mean": 0.012717799012929586,
+        "ppg": 0.0003300648440025877
       },
       "eeg_data": {
-        "alpha": 0.58,
-        "beta": 0.37,
-        "gamma": 0.05,
-        "HR": 72
+        "alpha": 0.53,
+        "beta": 0.4,
+        "gamma": 0.06,
+        "HR": 71
       },
       "russell": {
-        "valence": -0.017524894557802692,
-        "arousal": 0.11219675345940358,
-        "emotion": "Depressed"
+        "valence": -0.4663419373783245,
+        "arousal": 0.09588925492866915,
+        "emotion": "Bored"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": 80.4
     },
     {
       "timestamp": 28,
       "raw_signals": {
-        "fp1_mean": 0.01700323152976586,
-        "fp2_mean": 0.014192911027916871,
-        "ppg": 0.0002080590629410605
+        "fp1_mean": 0.007857551680713566,
+        "fp2_mean": 0.009652791266555619,
+        "ppg": 0.0015257478638959026
       },
       "eeg_data": {
-        "alpha": 0.62,
-        "beta": 0.33,
-        "gamma": 0.05,
+        "alpha": 0.44,
+        "beta": 0.46,
+        "gamma": 0.09,
         "HR": 71
       },
       "russell": {
-        "valence": 0.03724369955324186,
-        "arousal": 0.11118202917290751,
-        "emotion": "Relaxed"
+        "valence": -0.4999719130908361,
+        "arousal": 0.11868283008919842,
+        "emotion": "Bored"
       },
       "suppression": {
         "expression": null,
         "load": null,
         "state": null
-      }
+      },
+      "suppression_index": 84.4
     },
     {
       "timestamp": 29,
       "raw_signals": {
-        "fp1_mean": 0.016345495615993567,
-        "fp2_mean": 0.007000724828694787,
-        "ppg": 0.0016302938092831564
+        "fp1_mean": 0.017257512919754213,
+        "fp2_mean": 0.006674152961961475,
+        "ppg": 0.0003021314177796266
+      },
+      "eeg_data": {
+        "alpha": 0.52,
+        "beta": 0.39,
+        "gamma": 0.09,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.4226588175909892,
+        "arousal": 0.09150931995483796,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.4226588175909892,
+        "load": 0.736928518973443,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 75.4
+    },
+    {
+      "timestamp": 30,
+      "raw_signals": {
+        "fp1_mean": 0.018741602720519515,
+        "fp2_mean": -0.0035855790378316182,
+        "ppg": 0.0010663344394043553
+      },
+      "eeg_data": {
+        "alpha": 0.3,
+        "beta": 0.57,
+        "gamma": 0.13,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.5231847975784549,
+        "arousal": 0.11129417905488663,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.5231847975784549,
+        "load": 1.9202680741184772,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 94.8
+    },
+    {
+      "timestamp": 31,
+      "raw_signals": {
+        "fp1_mean": 0.012498550480199072,
+        "fp2_mean": 0.031705612220744195,
+        "ppg": 0.0012266298696133676
+      },
+      "eeg_data": {
+        "alpha": 0.46,
+        "beta": 0.44,
+        "gamma": 0.1,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.6513018343251393,
+        "arousal": 0.07969266886140257,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.6513018343251393,
+        "load": 0.9752061550501,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 79.2
+    },
+    {
+      "timestamp": 32,
+      "raw_signals": {
+        "fp1_mean": 0.02091343022638224,
+        "fp2_mean": -0.00400424182927113,
+        "ppg": 0.0006925530358056077
+      },
+      "eeg_data": {
+        "alpha": 0.71,
+        "beta": 0.24,
+        "gamma": 0.05,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.6289516076927888,
+        "arousal": 0.04292060881726867,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.6289516076927888,
+        "load": 0.38969429792908206,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 58.7
+    },
+    {
+      "timestamp": 33,
+      "raw_signals": {
+        "fp1_mean": 0.008197746136224688,
+        "fp2_mean": 0.0036866406326122123,
+        "ppg": 0.0012371390783484097
+      },
+      "eeg_data": {
+        "alpha": 0.64,
+        "beta": 0.32,
+        "gamma": 0.05,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.6527538331283651,
+        "arousal": 0.06435476431695458,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.6527538331283651,
+        "load": 0.436012012014097,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 59.9
+    },
+    {
+      "timestamp": 34,
+      "raw_signals": {
+        "fp1_mean": 0.016313474345513876,
+        "fp2_mean": 0.004877986862394136,
+        "ppg": 0.0015900956163441243
+      },
+      "eeg_data": {
+        "alpha": 0.76,
+        "beta": 0.21,
+        "gamma": 0.03,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.5834268665527103,
+        "arousal": 0.045306983010836424,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.5834268665527103,
+        "load": 0.26949977733959624,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 52.9
+    },
+    {
+      "timestamp": 35,
+      "raw_signals": {
+        "fp1_mean": 0.017977496120015077,
+        "fp2_mean": 0.007056249670420262,
+        "ppg": 0.0008085907030736467
       },
       "eeg_data": {
         "alpha": 0.69,
@@ -710,646 +889,48 @@
         "HR": 71
       },
       "russell": {
-        "valence": 0.045989442468821126,
-        "arousal": 0.086390214122526,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": 0.045989442468821126,
-        "load": 0.41546295223606056,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 30,
-      "raw_signals": {
-        "fp1_mean": 0.019101284536362416,
-        "fp2_mean": 0.0031661248610474445,
-        "ppg": 0.0017638533769499408
-      },
-      "eeg_data": {
-        "alpha": 0.9,
-        "beta": 0.08,
-        "gamma": 0.02,
-        "HR": 75
-      },
-      "russell": {
-        "valence": 0.3175852470474324,
-        "arousal": 0.03639807821913331,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.3175852470474324,
-        "load": 0.13676122794811607,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 31,
-      "raw_signals": {
-        "fp1_mean": -0.003381426708701226,
-        "fp2_mean": 0.011855159615496887,
-        "ppg": 0.0006526571190149165
-      },
-      "eeg_data": {
-        "alpha": 0.86,
-        "beta": 0.11,
-        "gamma": 0.03,
-        "HR": 77
-      },
-      "russell": {
-        "valence": 0.12009778282967093,
-        "arousal": 0.03696766291102527,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.12009778282967093,
-        "load": 0.10924221921079934,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 32,
-      "raw_signals": {
-        "fp1_mean": 0.025836100260909333,
-        "fp2_mean": 0.011725202321326827,
-        "ppg": 0.0012673257515099315
-      },
-      "eeg_data": {
-        "alpha": 0.83,
-        "beta": 0.14,
-        "gamma": 0.03,
-        "HR": 80
-      },
-      "russell": {
-        "valence": 0.07946505587718275,
-        "arousal": 0.046061438709108615,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": 0.07946505587718275,
-        "load": 0.1597953106654483,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 33,
-      "raw_signals": {
-        "fp1_mean": 0.005543505554683959,
-        "fp2_mean": 0.014887136914045784,
-        "ppg": 0.0007365079348696395
-      },
-      "eeg_data": {
-        "alpha": 0.91,
-        "beta": 0.08,
-        "gamma": 0.01,
-        "HR": 89
-      },
-      "russell": {
-        "valence": 0.20337628480355474,
-        "arousal": 0.032235472155601796,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.20337628480355474,
-        "load": 0.08356974258102051,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 34,
-      "raw_signals": {
-        "fp1_mean": 0.01057766329362272,
-        "fp2_mean": -0.00038997978996980695,
-        "ppg": 0.00023624092645425384
-      },
-      "eeg_data": {
-        "alpha": 0.73,
-        "beta": 0.24,
-        "gamma": 0.03,
-        "HR": 95
-      },
-      "russell": {
-        "valence": -0.09897479513132529,
-        "arousal": 0.06969845324238116,
+        "valence": -0.5639205276916142,
+        "arousal": 0.057738317679075724,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.09897479513132529,
-        "load": 0.34473536551002776,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 35,
-      "raw_signals": {
-        "fp1_mean": 0.015482677622747638,
-        "fp2_mean": 0.023120693661510906,
-        "ppg": 0.00016497904353253223
+        "expression": -0.5639205276916142,
+        "load": 0.37888159146203687,
+        "state": "SustainedSuppression"
       },
-      "eeg_data": {
-        "alpha": 0.74,
-        "beta": 0.24,
-        "gamma": 0.02,
-        "HR": 100
-      },
-      "russell": {
-        "valence": -0.056103887283174225,
-        "arousal": 0.07369693315278775,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.056103887283174225,
-        "load": 0.32591280287586033,
-        "state": "MildSuppression"
-      }
+      "suppression_index": 57.0
     },
     {
       "timestamp": 36,
       "raw_signals": {
-        "fp1_mean": 0.017504187378791378,
-        "fp2_mean": 0.0014063400409446828,
-        "ppg": 0.0005355492534730827
+        "fp1_mean": 0.0026942118684169652,
+        "fp2_mean": 0.027451489157202417,
+        "ppg": 0.0014383784131814157
       },
       "eeg_data": {
-        "alpha": 0.73,
-        "beta": 0.25,
-        "gamma": 0.02,
-        "HR": 110
+        "alpha": 0.58,
+        "beta": 0.38,
+        "gamma": 0.04,
+        "HR": 71
       },
       "russell": {
-        "valence": -0.06955636536727669,
-        "arousal": 0.07875949598764154,
-        "emotion": "Depressed"
+        "valence": -0.44593169920224596,
+        "arousal": 0.07975454403697543,
+        "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.06955636536727669,
-        "load": 0.32861102772268547,
-        "state": "MildSuppression"
-      }
+        "expression": -0.44593169920224596,
+        "load": 0.6103711064792131,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 65.7
     },
     {
       "timestamp": 37,
       "raw_signals": {
-        "fp1_mean": 0.010070232523952307,
-        "fp2_mean": 0.022001635917090808,
-        "ppg": 0.0013088201777504127
-      },
-      "eeg_data": {
-        "alpha": 0.59,
-        "beta": 0.36,
-        "gamma": 0.05,
-        "HR": 100
-      },
-      "russell": {
-        "valence": -0.21223017255186238,
-        "arousal": 0.08691336088229706,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.21223017255186238,
-        "load": 0.6609076925014294,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 38,
-      "raw_signals": {
-        "fp1_mean": 0.0155653597881514,
-        "fp2_mean": 0.03631313812262842,
-        "ppg": 0.0013230999320176901
-      },
-      "eeg_data": {
-        "alpha": 0.76,
-        "beta": 0.2,
-        "gamma": 0.04,
-        "HR": 99
-      },
-      "russell": {
-        "valence": -0.22997215466424098,
-        "arousal": 0.04810080393160003,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.22997215466424098,
-        "load": 0.21034798488459927,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 39,
-      "raw_signals": {
-        "fp1_mean": 0.022315603543963,
-        "fp2_mean": 0.008694956342570573,
-        "ppg": 0.00019090105271378475
-      },
-      "eeg_data": {
-        "alpha": 0.76,
-        "beta": 0.2,
-        "gamma": 0.04,
-        "HR": 90
-      },
-      "russell": {
-        "valence": -0.2824216636323712,
-        "arousal": 0.05002957830143291,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.2824216636323712,
-        "load": 0.27166601942682056,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 40,
-      "raw_signals": {
-        "fp1_mean": 0.020899971911376276,
-        "fp2_mean": 0.005520316631199423,
-        "ppg": 9.525025995941089e-05
-      },
-      "eeg_data": {
-        "alpha": 0.76,
-        "beta": 0.2,
-        "gamma": 0.04,
-        "HR": 85
-      },
-      "russell": {
-        "valence": -0.30295685413693885,
-        "arousal": 0.04668223837745281,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.30295685413693885,
-        "load": 0.3057110697963494,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 41,
-      "raw_signals": {
-        "fp1_mean": 0.0228012152330954,
-        "fp2_mean": 0.019433273269469285,
-        "ppg": 0.00041954319704486895
-      },
-      "eeg_data": {
-        "alpha": 0.7,
-        "beta": 0.26,
-        "gamma": 0.04,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.3687209929526653,
-        "arousal": 0.06316551308910866,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.3687209929526653,
-        "load": 0.40899082693724437,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 42,
-      "raw_signals": {
-        "fp1_mean": -0.002871216419864167,
-        "fp2_mean": 0.007796338518909226,
-        "ppg": 0.00012198677368883703
-      },
-      "eeg_data": {
-        "alpha": 0.56,
-        "beta": 0.39,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.3995814757291688,
-        "arousal": 0.08789462767392103,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.3995814757291688,
-        "load": 0.6750361222521555,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 43,
-      "raw_signals": {
-        "fp1_mean": 0.017376176770022695,
-        "fp2_mean": 0.01068380304432458,
-        "ppg": 0.0012465758300581134
-      },
-      "eeg_data": {
-        "alpha": 0.38,
-        "beta": 0.55,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.3735837475490971,
-        "arousal": 0.10037905436451694,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.3735837475490971,
-        "load": 1.4329854299413587,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 44,
-      "raw_signals": {
-        "fp1_mean": 0.02508046155968121,
-        "fp2_mean": 0.020358756139189856,
-        "ppg": 0.0012317203453280274
-      },
-      "eeg_data": {
-        "alpha": 0.61,
-        "beta": 0.34,
-        "gamma": 0.05,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.2574459539737468,
-        "arousal": 0.07585255820838442,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.2574459539737468,
-        "load": 0.5512933119598826,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 45,
-      "raw_signals": {
-        "fp1_mean": 0.02340942600182193,
-        "fp2_mean": 0.014310712937563337,
-        "ppg": 0.00148037582410836
-      },
-      "eeg_data": {
-        "alpha": 0.69,
-        "beta": 0.28,
-        "gamma": 0.03,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.14200408762340716,
-        "arousal": 0.06706664090589326,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.14200408762340716,
-        "load": 0.3810826552242319,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 46,
-      "raw_signals": {
-        "fp1_mean": 0.011350130594477398,
-        "fp2_mean": 0.00613028846214787,
-        "ppg": 0.0003645759479150354
-      },
-      "eeg_data": {
-        "alpha": 0.68,
-        "beta": 0.28,
-        "gamma": 0.04,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.22408493638633806,
-        "arousal": 0.06329096945413085,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.22408493638633806,
-        "load": 0.3339355202919192,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 47,
-      "raw_signals": {
-        "fp1_mean": 0.007490858636248703,
-        "fp2_mean": 0.010034603341414107,
-        "ppg": 0.001177857973973088
-      },
-      "eeg_data": {
-        "alpha": 0.84,
-        "beta": 0.14,
-        "gamma": 0.02,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.06870714495375704,
-        "arousal": 0.052507580498005774,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": 0.06870714495375704,
-        "load": 0.0914738778875971,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 48,
-      "raw_signals": {
-        "fp1_mean": 0.03293035144174631,
-        "fp2_mean": -0.012378149343475281,
-        "ppg": 0.0016214015277995549
-      },
-      "eeg_data": {
-        "alpha": 0.82,
-        "beta": 0.16,
-        "gamma": 0.02,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.040965222960196335,
-        "arousal": 0.053937367905694866,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.040965222960196335,
-        "load": 0.18156765562025007,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 49,
-      "raw_signals": {
-        "fp1_mean": 0.041732315647788926,
-        "fp2_mean": 0.029122342064539043,
-        "ppg": 0.0007642832361696606
-      },
-      "eeg_data": {
-        "alpha": 0.89,
-        "beta": 0.1,
-        "gamma": 0.02,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.14683391495658218,
-        "arousal": 0.03950378118465407,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.14683391495658218,
-        "load": 0.04580379661698772,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 50,
-      "raw_signals": {
-        "fp1_mean": 0.018262048909099608,
-        "fp2_mean": 0.0156335990346472,
-        "ppg": 0.0005745617888926708
-      },
-      "eeg_data": {
-        "alpha": 0.96,
-        "beta": 0.03,
-        "gamma": 0.01,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.35208842341445434,
-        "arousal": 0.017424688633061344,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.35208842341445434,
-        "load": 0.018956291292421382,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 51,
-      "raw_signals": {
-        "fp1_mean": 0.013942614403407065,
-        "fp2_mean": 0.01766900851084813,
-        "ppg": 0.001292685233483086
-      },
-      "eeg_data": {
-        "alpha": 0.95,
-        "beta": 0.04,
-        "gamma": 0.01,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.13374509725735217,
-        "arousal": 0.016227520562488447,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.13374509725735217,
-        "load": 0.09277224385992733,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 52,
-      "raw_signals": {
-        "fp1_mean": 0.026016381336178063,
-        "fp2_mean": 0.006833861613524101,
-        "ppg": 0.0011479131913546528
-      },
-      "eeg_data": {
-        "alpha": 0.9,
-        "beta": 0.09,
-        "gamma": 0.01,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.19465049624504716,
-        "arousal": 0.03785325207483271,
-        "emotion": "Happy"
-      },
-      "suppression": {
-        "expression": 0.19465049624504716,
-        "load": 0.06654387110943355,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 53,
-      "raw_signals": {
-        "fp1_mean": 0.02456185953525122,
-        "fp2_mean": 0.012947417331896915,
-        "ppg": 1.4899879133157425e-05
-      },
-      "eeg_data": {
-        "alpha": 0.79,
-        "beta": 0.19,
-        "gamma": 0.02,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.07399411964327018,
-        "arousal": 0.060002876464036785,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.07399411964327018,
-        "load": 0.14275159590307124,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 54,
-      "raw_signals": {
-        "fp1_mean": 0.011902331674510961,
-        "fp2_mean": 0.013433754044261656,
-        "ppg": 0.0008096138827478416
-      },
-      "eeg_data": {
-        "alpha": 0.48,
-        "beta": 0.48,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.4916542525121111,
-        "arousal": 0.10981721999353174,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.4916542525121111,
-        "load": 1.0047023554970769,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 55,
-      "raw_signals": {
-        "fp1_mean": -0.0005669331717809761,
-        "fp2_mean": -0.0008670287470321854,
-        "ppg": 0.00025268596466166305
-      },
-      "eeg_data": {
-        "alpha": 0.61,
-        "beta": 0.35,
-        "gamma": 0.03,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.06565759805308835,
-        "arousal": 0.10920277800375383,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.06565759805308835,
-        "load": 0.5343943873295487,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 56,
-      "raw_signals": {
-        "fp1_mean": 0.024490762499289696,
-        "fp2_mean": 0.018693632507884923,
-        "ppg": 0.0007162251969581676
+        "fp1_mean": 0.009146587592787407,
+        "fp2_mean": 0.00802786996015415,
+        "ppg": 0.0009824714311360758
       },
       "eeg_data": {
         "alpha": 0.55,
@@ -1358,622 +939,548 @@
         "HR": 71
       },
       "russell": {
-        "valence": -0.10471848624609617,
-        "arousal": 0.13640176927705522,
+        "valence": -0.4881844515672529,
+        "arousal": 0.08961586417225963,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.10471848624609617,
-        "load": 0.7424030529571551,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 57,
-      "raw_signals": {
-        "fp1_mean": 0.004199055154420754,
-        "fp2_mean": 0.017151320183456085,
-        "ppg": 0.0005832825193736065
-      },
-      "eeg_data": {
-        "alpha": 0.66,
-        "beta": 0.31,
-        "gamma": 0.03,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.03413892786175954,
-        "arousal": 0.11409888212446487,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.03413892786175954,
-        "load": 0.577355159036984,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 58,
-      "raw_signals": {
-        "fp1_mean": 0.014392910829463045,
-        "fp2_mean": 0.026325334837241067,
-        "ppg": 0.0011540640161873058
-      },
-      "eeg_data": {
-        "alpha": 0.82,
-        "beta": 0.16,
-        "gamma": 0.03,
-        "HR": 71
-      },
-      "russell": {
-        "valence": 0.054946337991811395,
-        "arousal": 0.06055832993412288,
-        "emotion": "Relaxed"
-      },
-      "suppression": {
-        "expression": 0.054946337991811395,
-        "load": 0.1787151470711515,
-        "state": "PositiveOverload"
-      }
-    },
-    {
-      "timestamp": 59,
-      "raw_signals": {
-        "fp1_mean": 0.030224823466372307,
-        "fp2_mean": 0.016450641751322666,
-        "ppg": 0.00030430988883679253
-      },
-      "eeg_data": {
-        "alpha": 0.75,
-        "beta": 0.22,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.25825660041235715,
-        "arousal": 0.05927416272204446,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.25825660041235715,
-        "load": 0.2846074434564583,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 60,
-      "raw_signals": {
-        "fp1_mean": 0.014120945181219147,
-        "fp2_mean": -0.005055992572284708,
-        "ppg": 0.0011782158345137485
-      },
-      "eeg_data": {
-        "alpha": 0.96,
-        "beta": 0.04,
-        "gamma": 0.01,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.04990944170174799,
-        "arousal": 0.010907915555594906,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.04990944170174799,
-        "load": 0.03538308200439916,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 61,
-      "raw_signals": {
-        "fp1_mean": 0.03386964059970847,
-        "fp2_mean": 0.02867297321776619,
-        "ppg": 0.0007274522819749958
-      },
-      "eeg_data": {
-        "alpha": 0.96,
-        "beta": 0.04,
-        "gamma": 0.01,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.07300445568491115,
-        "arousal": 0.010041184301559728,
-        "emotion": "Depressed"
-      },
-      "suppression": {
-        "expression": -0.07300445568491115,
-        "load": 0.0029755364138026735,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 62,
-      "raw_signals": {
-        "fp1_mean": 0.022098756801487884,
-        "fp2_mean": 0.006991346270611791,
-        "ppg": 0.0009721186731013233
-      },
-      "eeg_data": {
-        "alpha": 0.8,
-        "beta": 0.18,
-        "gamma": 0.02,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.163227476586779,
-        "arousal": 0.046626529347748594,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.163227476586779,
-        "load": 0.2798610774832458,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 63,
-      "raw_signals": {
-        "fp1_mean": 0.008446459388241186,
-        "fp2_mean": 0.01060655086333217,
-        "ppg": 0.001691877304637355
-      },
-      "eeg_data": {
-        "alpha": 0.71,
-        "beta": 0.25,
-        "gamma": 0.04,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.10856362654020157,
-        "arousal": 0.06480154876942693,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.10856362654020157,
-        "load": 0.314041419816619,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 64,
-      "raw_signals": {
-        "fp1_mean": 0.0265014793950111,
-        "fp2_mean": 0.008903024928551698,
-        "ppg": 0.0012856883972020964
-      },
-      "eeg_data": {
-        "alpha": 0.43,
-        "beta": 0.48,
-        "gamma": 0.08,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.37500469298646366,
-        "arousal": 0.11274466143608042,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.37500469298646366,
-        "load": 1.1128353086988505,
+        "expression": -0.4881844515672529,
+        "load": 0.7456006334744156,
         "state": "SustainedSuppression"
-      }
+      },
+      "suppression_index": 70.1
     },
     {
-      "timestamp": 65,
+      "timestamp": 38,
       "raw_signals": {
-        "fp1_mean": -0.00051310868668075,
-        "fp2_mean": -0.0027568090145830663,
-        "ppg": 0.0013518664765461586
+        "fp1_mean": 0.012946186000204377,
+        "fp2_mean": 0.012543494078366428,
+        "ppg": 0.0017488489288109777
+      },
+      "eeg_data": {
+        "alpha": 0.29,
+        "beta": 0.59,
+        "gamma": 0.11,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.3555871476353386,
+        "arousal": 0.12798484972344132,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.3555871476353386,
+        "load": 2.046432037961021,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 94.9
+    },
+    {
+      "timestamp": 39,
+      "raw_signals": {
+        "fp1_mean": 0.01360477180562948,
+        "fp2_mean": 0.016446745368234178,
+        "ppg": 7.288605088774383e-05
       },
       "eeg_data": {
         "alpha": 0.29,
         "beta": 0.6,
         "gamma": 0.11,
-        "HR": 71
+        "HR": 72
       },
       "russell": {
-        "valence": -0.5429130380984027,
-        "arousal": 0.1295108175418578,
+        "valence": -0.4679895329270498,
+        "arousal": 0.12981505227948706,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.5429130380984027,
-        "load": 2.130438220754355,
+        "expression": -0.4679895329270498,
+        "load": 2.098011540191641,
         "state": "SustainedSuppression"
-      }
+      },
+      "suppression_index": 70.9
     },
     {
-      "timestamp": 66,
+      "timestamp": 40,
       "raw_signals": {
-        "fp1_mean": 0.007097059928545804,
-        "fp2_mean": 0.001428880940510746,
-        "ppg": 0.0007380497297098555
+        "fp1_mean": 0.0101839611577906,
+        "fp2_mean": 0.023663724723656236,
+        "ppg": 0.0004675804736179704
       },
       "eeg_data": {
-        "alpha": 0.32,
-        "beta": 0.57,
-        "gamma": 0.11,
-        "HR": 71
+        "alpha": 0.25,
+        "beta": 0.62,
+        "gamma": 0.12,
+        "HR": 72
       },
       "russell": {
-        "valence": -0.5252785070722295,
-        "arousal": 0.13096625152168984,
+        "valence": -0.5371108619382583,
+        "arousal": 0.13357830066541002,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.5252785070722295,
-        "load": 1.7768546807340413,
+        "expression": -0.5371108619382583,
+        "load": 2.489767467160189,
         "state": "SustainedSuppression"
-      }
+      },
+      "suppression_index": 78.7
     },
     {
-      "timestamp": 67,
+      "timestamp": 41,
       "raw_signals": {
-        "fp1_mean": 0.006126472505239115,
-        "fp2_mean": -0.0011206624612777965,
-        "ppg": 0.0005660786178180836
+        "fp1_mean": 0.005107562189613696,
+        "fp2_mean": 0.0053606234720716215,
+        "ppg": 0.0016091421166129513
       },
       "eeg_data": {
-        "alpha": 0.32,
-        "beta": 0.59,
+        "alpha": 0.23,
+        "beta": 0.65,
+        "gamma": 0.12,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.4988871862373622,
+        "arousal": 0.1420495822358533,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.4988871862373622,
+        "load": 2.79293498088991,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 81.9
+    },
+    {
+      "timestamp": 42,
+      "raw_signals": {
+        "fp1_mean": 0.018261317669158398,
+        "fp2_mean": 0.008186231703968636,
+        "ppg": 0.0011459409152426252
+      },
+      "eeg_data": {
+        "alpha": 0.28,
+        "beta": 0.63,
         "gamma": 0.09,
-        "HR": 71
+        "HR": 72
       },
       "russell": {
-        "valence": -0.4534637532410008,
-        "arousal": 0.13668707769836133,
+        "valence": -0.546928102873037,
+        "arousal": 0.12198331022283762,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.4534637532410008,
-        "load": 1.799968646336745,
+        "expression": -0.546928102873037,
+        "load": 2.1955370539994674,
         "state": "SustainedSuppression"
-      }
+      },
+      "suppression_index": 65.5
     },
     {
-      "timestamp": 68,
+      "timestamp": 43,
       "raw_signals": {
-        "fp1_mean": 0.011088580297510458,
-        "fp2_mean": 0.011078438769267108,
-        "ppg": 0.00029815451443521184
+        "fp1_mean": 0.033375626796859584,
+        "fp2_mean": 0.023409191451759934,
+        "ppg": 0.000986663344571633
       },
       "eeg_data": {
         "alpha": 0.39,
-        "beta": 0.54,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.373410062245157,
-        "arousal": 0.10799469181077762,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.373410062245157,
-        "load": 1.4181043330130572,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 69,
-      "raw_signals": {
-        "fp1_mean": 0.03575436168231752,
-        "fp2_mean": -0.0025223387834971576,
-        "ppg": 0.0010326932211734779
-      },
-      "eeg_data": {
-        "alpha": 0.59,
-        "beta": 0.36,
-        "gamma": 0.05,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.28794894614001687,
-        "arousal": 0.09151240565429122,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.28794894614001687,
-        "load": 0.5382771928932111,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 70,
-      "raw_signals": {
-        "fp1_mean": 0.02223562301198766,
-        "fp2_mean": 0.012286412038319941,
-        "ppg": 0.0005872672905959379
-      },
-      "eeg_data": {
-        "alpha": 0.52,
-        "beta": 0.4,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.2740467182319316,
-        "arousal": 0.1149391695392471,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.2740467182319316,
-        "load": 0.7317906848336754,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 71,
-      "raw_signals": {
-        "fp1_mean": 0.010374995237901665,
-        "fp2_mean": -0.001345509602435884,
-        "ppg": 3.8169016575405504e-05
-      },
-      "eeg_data": {
-        "alpha": 0.51,
-        "beta": 0.41,
+        "beta": 0.53,
         "gamma": 0.08,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.3191621327461547,
-        "arousal": 0.10993016378805931,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.3191621327461547,
-        "load": 0.848331608938497,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 72,
-      "raw_signals": {
-        "fp1_mean": 0.01880860186020041,
-        "fp2_mean": -0.0016012496373532196,
-        "ppg": 0.0001588045200988001
-      },
-      "eeg_data": {
-        "alpha": 0.44,
-        "beta": 0.47,
-        "gamma": 0.09,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.37935657417396107,
-        "arousal": 0.13196836208387405,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.37935657417396107,
-        "load": 1.0979565641674547,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 73,
-      "raw_signals": {
-        "fp1_mean": 0.014686727449706281,
-        "fp2_mean": 0.00808007751866393,
-        "ppg": 0.0007481852933718259
-      },
-      "eeg_data": {
-        "alpha": 0.2,
-        "beta": 0.67,
-        "gamma": 0.12,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.5956647699623537,
-        "arousal": 0.15181379839430528,
-        "emotion": "Nervous"
-      },
-      "suppression": {
-        "expression": -0.5956647699623537,
-        "load": 3.2541700237293187,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 74,
-      "raw_signals": {
-        "fp1_mean": 0.03980505420747114,
-        "fp2_mean": 0.03730077554607065,
-        "ppg": 0.00036708100555791036
-      },
-      "eeg_data": {
-        "alpha": 0.49,
-        "beta": 0.44,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.5504592724889927,
-        "arousal": 0.0912080047120392,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.5504592724889927,
-        "load": 0.8678910658684253,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 75,
-      "raw_signals": {
-        "fp1_mean": 0.02598148730905899,
-        "fp2_mean": 0.018859145691022896,
-        "ppg": 0.0012972414258484535
-      },
-      "eeg_data": {
-        "alpha": 0.48,
-        "beta": 0.45,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.4782823597367345,
-        "arousal": 0.11455570352761271,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.4782823597367345,
-        "load": 0.9416433755092924,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 76,
-      "raw_signals": {
-        "fp1_mean": 0.009429881975539754,
-        "fp2_mean": 0.01511648445425208,
-        "ppg": 0.0002879458230968427
-      },
-      "eeg_data": {
-        "alpha": 0.54,
-        "beta": 0.4,
-        "gamma": 0.06,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.43653042536856335,
-        "arousal": 0.09864234511890771,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.43653042536856335,
-        "load": 0.7364686246283316,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 77,
-      "raw_signals": {
-        "fp1_mean": 0.013114343702510464,
-        "fp2_mean": 0.012713982742819614,
-        "ppg": 0.0017087061006143475
-      },
-      "eeg_data": {
-        "alpha": 0.53,
-        "beta": 0.41,
-        "gamma": 0.07,
         "HR": 72
       },
       "russell": {
-        "valence": -0.4107189805764074,
-        "arousal": 0.10675775504547243,
+        "valence": -0.7248019362006346,
+        "arousal": 0.1049299342601346,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.4107189805764074,
-        "load": 0.8012265182249565,
-        "state": "SustainedSuppression"
-      }
+        "expression": -0.7248019362006346,
+        "load": 1.3868227955192045,
+        "state": "PreBreakdownSuppression"
+      },
+      "suppression_index": 60.5
     },
     {
-      "timestamp": 78,
+      "timestamp": 44,
       "raw_signals": {
-        "fp1_mean": 0.021875951195977055,
-        "fp2_mean": 0.01299207871764345,
-        "ppg": 0.0015109579340116172
+        "fp1_mean": 0.0394632224282888,
+        "fp2_mean": 0.023215634282082266,
+        "ppg": 0.0010817831225218121
       },
       "eeg_data": {
-        "alpha": 0.33,
-        "beta": 0.57,
-        "gamma": 0.1,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.4677382844081088,
-        "arousal": 0.1288197385727074,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.4677382844081088,
-        "load": 1.690596991890417,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 79,
-      "raw_signals": {
-        "fp1_mean": 0.015409024470988755,
-        "fp2_mean": 0.024645890157637337,
-        "ppg": 0.0009506884962721959
-      },
-      "eeg_data": {
-        "alpha": 0.56,
-        "beta": 0.36,
-        "gamma": 0.07,
+        "alpha": 0.65,
+        "beta": 0.31,
+        "gamma": 0.04,
         "HR": 71
       },
       "russell": {
-        "valence": -0.4272182803859818,
-        "arousal": 0.07922154189740084,
+        "valence": -0.2582857670513296,
+        "arousal": 0.09045117677688934,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.4272182803859818,
-        "load": 0.6189900709998747,
-        "state": "SustainedSuppression"
-      }
+        "expression": -0.2582857670513296,
+        "load": 0.5406927734019678,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 60.3
     },
     {
-      "timestamp": 80,
+      "timestamp": 45,
       "raw_signals": {
-        "fp1_mean": 0.030250726868790885,
-        "fp2_mean": 0.015315503040906115,
-        "ppg": 0.0013302721137495115
+        "fp1_mean": 0.02278902411262206,
+        "fp2_mean": -0.0009282416828773877,
+        "ppg": 0.00042352796912323575
       },
       "eeg_data": {
-        "alpha": 0.69,
-        "beta": 0.26,
-        "gamma": 0.05,
+        "alpha": 0.85,
+        "beta": 0.13,
+        "gamma": 0.02,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.2235395077032032,
+        "arousal": 0.03291598215277873,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.2235395077032032,
+        "load": 0.13462398041721907,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 53.2
+    },
+    {
+      "timestamp": 46,
+      "raw_signals": {
+        "fp1_mean": 0.03937254680551849,
+        "fp2_mean": 0.012544965417401743,
+        "ppg": 0.00010012382318772933
+      },
+      "eeg_data": {
+        "alpha": 0.93,
+        "beta": 0.05,
+        "gamma": 0.01,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.17063278516002672,
+        "arousal": 0.015807031738257954,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.17063278516002672,
+        "load": 0.08831446022628581,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 54.6
+    },
+    {
+      "timestamp": 47,
+      "raw_signals": {
+        "fp1_mean": 0.027697783410047118,
+        "fp2_mean": 0.03924632907689594,
+        "ppg": 7.288516242969127e-05
+      },
+      "eeg_data": {
+        "alpha": 0.93,
+        "beta": 0.06,
+        "gamma": 0.01,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.16221568910197148,
+        "arousal": 0.017312054049127033,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.16221568910197148,
+        "load": 0.10819420912052385,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 53.7
+    },
+    {
+      "timestamp": 48,
+      "raw_signals": {
+        "fp1_mean": -0.0035809742661120497,
+        "fp2_mean": 0.0066035686102146164,
+        "ppg": 0.0003780294363439989
+      },
+      "eeg_data": {
+        "alpha": 0.92,
+        "beta": 0.06,
+        "gamma": 0.02,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.40892362760496115,
+        "arousal": 0.01538060156955495,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.40892362760496115,
+        "load": 0.04443877742479006,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 55.6
+    },
+    {
+      "timestamp": 49,
+      "raw_signals": {
+        "fp1_mean": 0.0037729256095416592,
+        "fp2_mean": -0.013638849697000625,
+        "ppg": 0.0015689690496833307
+      },
+      "eeg_data": {
+        "alpha": 0.94,
+        "beta": 0.05,
+        "gamma": 0.01,
         "HR": 72
       },
       "russell": {
-        "valence": -0.3107201090737098,
-        "arousal": 0.06057401229653743,
+        "valence": -0.21092945910820837,
+        "arousal": 0.014965375608739217,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.3107201090737098,
-        "load": 0.3712897205154637,
-        "state": "SustainedSuppression"
-      }
+        "expression": -0.21092945910820837,
+        "load": 0.10561378047166976,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 89.1
     },
     {
-      "timestamp": 81,
+      "timestamp": 50,
       "raw_signals": {
-        "fp1_mean": 0.010605542493055837,
-        "fp2_mean": 0.008598540773280487,
-        "ppg": 0.00019986145499436214
+        "fp1_mean": 0.024277904507499212,
+        "fp2_mean": 0.0031639231384490325,
+        "ppg": 0.0005669417483655954
       },
       "eeg_data": {
-        "alpha": 0.76,
+        "alpha": 0.94,
+        "beta": 0.05,
+        "gamma": 0.01,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.16004048143189925,
+        "arousal": 0.015068258889027047,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.16004048143189925,
+        "load": 0.03735481165157746,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 89.5
+    },
+    {
+      "timestamp": 51,
+      "raw_signals": {
+        "fp1_mean": 0.004897290068370563,
+        "fp2_mean": 0.020174751332956077,
+        "ppg": 0.0015818542085182991
+      },
+      "eeg_data": {
+        "alpha": 0.88,
+        "beta": 0.11,
+        "gamma": 0.01,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.1282041093043706,
+        "arousal": 0.030859327037965338,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.1282041093043706,
+        "load": 0.10849132329812013,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 88.1
+    },
+    {
+      "timestamp": 52,
+      "raw_signals": {
+        "fp1_mean": 0.008845126209491367,
+        "fp2_mean": 0.016805242450104403,
+        "ppg": 0.0002678423716080474
+      },
+      "eeg_data": {
+        "alpha": 0.77,
         "beta": 0.2,
+        "gamma": 0.03,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.0917560868062729,
+        "arousal": 0.05087055808669843,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.0917560868062729,
+        "load": 0.28803485892995023,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 84.9
+    },
+    {
+      "timestamp": 53,
+      "raw_signals": {
+        "fp1_mean": 0.0063297130678232165,
+        "fp2_mean": 0.011223501451632069,
+        "ppg": 0.0012435964132540688
+      },
+      "eeg_data": {
+        "alpha": 0.71,
+        "beta": 0.25,
         "gamma": 0.04,
         "HR": 72
       },
       "russell": {
-        "valence": -0.2424518550234677,
-        "arousal": 0.048236567303061945,
+        "valence": -0.3371278671604222,
+        "arousal": 0.05065473246158012,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.2424518550234677,
-        "load": 0.23617088077378365,
-        "state": "MildSuppression"
-      }
+        "expression": -0.3371278671604222,
+        "load": 0.32802389623032197,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 83.9
     },
     {
-      "timestamp": 82,
+      "timestamp": 54,
       "raw_signals": {
-        "fp1_mean": 0.018721421289448686,
-        "fp2_mean": 0.007806957955099166,
-        "ppg": 5.956370712978935e-05
+        "fp1_mean": 0.019921753549810142,
+        "fp2_mean": -0.00085450710368426,
+        "ppg": 0.000591677190488219
+      },
+      "eeg_data": {
+        "alpha": 0.69,
+        "beta": 0.27,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.4716015733534934,
+        "arousal": 0.052397710646423,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.4716015733534934,
+        "load": 0.41507181816699923,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 61.2
+    },
+    {
+      "timestamp": 55,
+      "raw_signals": {
+        "fp1_mean": 0.011660832498416231,
+        "fp2_mean": 0.024192424631641514,
+        "ppg": 0.0002606080648607083
+      },
+      "eeg_data": {
+        "alpha": 0.81,
+        "beta": 0.16,
+        "gamma": 0.03,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.40920574712388286,
+        "arousal": 0.03608679944316336,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.40920574712388286,
+        "load": 0.2317413047985505,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 85.3
+    },
+    {
+      "timestamp": 56,
+      "raw_signals": {
+        "fp1_mean": 0.007279023939160599,
+        "fp2_mean": 0.02531727659973808,
+        "ppg": 0.000630767039995189
+      },
+      "eeg_data": {
+        "alpha": 0.93,
+        "beta": 0.06,
+        "gamma": 0.01,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.28682207183786923,
+        "arousal": 0.01527255363495243,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.28682207183786923,
+        "load": 0.09450458749966546,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 51.3
+    },
+    {
+      "timestamp": 57,
+      "raw_signals": {
+        "fp1_mean": 0.010853071246098286,
+        "fp2_mean": 0.000891610915584852,
+        "ppg": 0.0017749675998322125
+      },
+      "eeg_data": {
+        "alpha": 0.76,
+        "beta": 0.21,
+        "gamma": 0.03,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.36447594130594374,
+        "arousal": 0.05803520899825375,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.36447594130594374,
+        "load": 0.2993377451509975,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 83.8
+    },
+    {
+      "timestamp": 58,
+      "raw_signals": {
+        "fp1_mean": 0.01274000285100756,
+        "fp2_mean": 0.009586708459749821,
+        "ppg": 0.001785489895870602
+      },
+      "eeg_data": {
+        "alpha": 0.83,
+        "beta": 0.15,
+        "gamma": 0.02,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.0035316599346712496,
+        "arousal": 0.05637594127850158,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": -0.0035316599346712496,
+        "load": 0.16930006887982205,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 85.7
+    },
+    {
+      "timestamp": 59,
+      "raw_signals": {
+        "fp1_mean": 0.017770790053656987,
+        "fp2_mean": 0.008610699174094783,
+        "ppg": 0.0009930284526940662
       },
       "eeg_data": {
         "alpha": 0.72,
@@ -1982,201 +1489,783 @@
         "HR": 72
       },
       "russell": {
-        "valence": -0.22894762609793753,
-        "arousal": 0.06291425836787345,
-        "emotion": "Bored"
+        "valence": 0.04864066720867896,
+        "arousal": 0.09423536719294051,
+        "emotion": "Relaxed"
       },
       "suppression": {
-        "expression": -0.22894762609793753,
-        "load": 0.21700053579024575,
-        "state": "MildSuppression"
-      }
+        "expression": 0.04864066720867896,
+        "load": 0.3752987395673106,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 81.5
     },
     {
-      "timestamp": 83,
+      "timestamp": 60,
       "raw_signals": {
-        "fp1_mean": 0.010090467889523419,
-        "fp2_mean": 0.016046456154319468,
-        "ppg": 0.0010018771156853569
-      },
-      "eeg_data": {
-        "alpha": 0.57,
-        "beta": 0.38,
-        "gamma": 0.05,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.24154920169563943,
-        "arousal": 0.08874476559690957,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.24154920169563943,
-        "load": 0.6528366755908582,
-        "state": "MildSuppression"
-      }
-    },
-    {
-      "timestamp": 84,
-      "raw_signals": {
-        "fp1_mean": 0.01447324582217941,
-        "fp2_mean": 0.012010494435441586,
-        "ppg": 3.2246646589999325e-05
-      },
-      "eeg_data": {
-        "alpha": 0.33,
-        "beta": 0.59,
-        "gamma": 0.08,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.39994869402793165,
-        "arousal": 0.12551642225275578,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.39994869402793165,
-        "load": 1.7989777554412556,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 85,
-      "raw_signals": {
-        "fp1_mean": 0.009413971238927678,
-        "fp2_mean": 0.03634988977647838,
-        "ppg": 3.209815129644009e-05
-      },
-      "eeg_data": {
-        "alpha": 0.45,
-        "beta": 0.48,
-        "gamma": 0.07,
-        "HR": 71
-      },
-      "russell": {
-        "valence": -0.37726380941900617,
-        "arousal": 0.10742523577672977,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.37726380941900617,
-        "load": 0.9785033889385086,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 86,
-      "raw_signals": {
-        "fp1_mean": 0.030372495197132726,
-        "fp2_mean": 0.025064927540707348,
-        "ppg": 0.0015909548215854298
-      },
-      "eeg_data": {
-        "alpha": 0.59,
-        "beta": 0.37,
-        "gamma": 0.04,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.43648895779329605,
-        "arousal": 0.07706141068751188,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.43648895779329605,
-        "load": 0.6749714695618159,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 87,
-      "raw_signals": {
-        "fp1_mean": 0.017818167487115257,
-        "fp2_mean": 0.006645083070955696,
-        "ppg": 0.001803910849295742
-      },
-      "eeg_data": {
-        "alpha": 0.58,
-        "beta": 0.36,
-        "gamma": 0.07,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.3807174994640138,
-        "arousal": 0.07486536423683839,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.3807174994640138,
-        "load": 0.5680045439050219,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 88,
-      "raw_signals": {
-        "fp1_mean": 0.02301363928691908,
-        "fp2_mean": 0.002492212605271594,
-        "ppg": 0.0011536622162145345
-      },
-      "eeg_data": {
-        "alpha": 0.62,
-        "beta": 0.33,
-        "gamma": 0.05,
-        "HR": 72
-      },
-      "russell": {
-        "valence": -0.3310195479166884,
-        "arousal": 0.07062893195163533,
-        "emotion": "Bored"
-      },
-      "suppression": {
-        "expression": -0.3310195479166884,
-        "load": 0.4599650632407496,
-        "state": "SustainedSuppression"
-      }
-    },
-    {
-      "timestamp": 89,
-      "raw_signals": {
-        "fp1_mean": 0.026821508982321243,
-        "fp2_mean": 0.025165343345076453,
-        "ppg": 0.0008406618823764615
+        "fp1_mean": 0.030632723553152944,
+        "fp2_mean": 0.01684915634977299,
+        "ppg": 0.0013755509135652555
       },
       "eeg_data": {
         "alpha": 0.7,
         "beta": 0.26,
         "gamma": 0.04,
-        "HR": 72
+        "HR": 71
       },
       "russell": {
-        "valence": -0.08318245160919001,
-        "arousal": 0.0690226288755461,
+        "valence": -0.04839448870478505,
+        "arousal": 0.09387872595978228,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": -0.04839448870478505,
+        "load": 0.38453468468267615,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 62.7
+    },
+    {
+      "timestamp": 61,
+      "raw_signals": {
+        "fp1_mean": 0.021409999816092817,
+        "fp2_mean": 0.02174036892363365,
+        "ppg": 0.0014626955715997905
+      },
+      "eeg_data": {
+        "alpha": 0.81,
+        "beta": 0.16,
+        "gamma": 0.03,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.0890069754904049,
+        "arousal": 0.054090731850156976,
         "emotion": "Bored"
       },
       "suppression": {
-        "expression": -0.08318245160919001,
-        "load": 0.34941762391263975,
+        "expression": -0.0890069754904049,
+        "load": 0.15420559261168876,
         "state": "MildSuppression"
-      }
+      },
+      "suppression_index": 54.8
+    },
+    {
+      "timestamp": 62,
+      "raw_signals": {
+        "fp1_mean": 0.019344989789086033,
+        "fp2_mean": 0.01047063976707483,
+        "ppg": 0.0002399866387117723
+      },
+      "eeg_data": {
+        "alpha": 0.58,
+        "beta": 0.36,
+        "gamma": 0.06,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.49123395086797944,
+        "arousal": 0.08795662053320574,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.49123395086797944,
+        "load": 0.5682588458182035,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 77.1
+    },
+    {
+      "timestamp": 63,
+      "raw_signals": {
+        "fp1_mean": -0.002953417710492824,
+        "fp2_mean": 0.020005471806749497,
+        "ppg": 0.0006848182214100105
+      },
+      "eeg_data": {
+        "alpha": 0.79,
+        "beta": 0.18,
+        "gamma": 0.03,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.2043441978857005,
+        "arousal": 0.05024319696610824,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.2043441978857005,
+        "load": 0.1143336880828972,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 53.6
+    },
+    {
+      "timestamp": 64,
+      "raw_signals": {
+        "fp1_mean": 0.03953820059938332,
+        "fp2_mean": -0.005763354091138186,
+        "ppg": 0.0015417446297726581
+      },
+      "eeg_data": {
+        "alpha": 0.79,
+        "beta": 0.18,
+        "gamma": 0.03,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.0966827757239847,
+        "arousal": 0.052695806273217544,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.0966827757239847,
+        "load": 0.17258041419771789,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 85.2
+    },
+    {
+      "timestamp": 65,
+      "raw_signals": {
+        "fp1_mean": 0.00913955142904484,
+        "fp2_mean": 0.014653837502266918,
+        "ppg": 0.0012882876181296995
+      },
+      "eeg_data": {
+        "alpha": 0.72,
+        "beta": 0.25,
+        "gamma": 0.03,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.0038509148655893333,
+        "arousal": 0.06931978926500657,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": -0.0038509148655893333,
+        "load": 0.33221711312538527,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 81.8
+    },
+    {
+      "timestamp": 66,
+      "raw_signals": {
+        "fp1_mean": 0.0123443426688512,
+        "fp2_mean": 0.01295952383569951,
+        "ppg": 0.0011351223379466534
+      },
+      "eeg_data": {
+        "alpha": 0.81,
+        "beta": 0.16,
+        "gamma": 0.03,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.04786629287136751,
+        "arousal": 0.041863210266103144,
+        "emotion": "Relaxed"
+      },
+      "suppression": {
+        "expression": 0.04786629287136751,
+        "load": 0.14662360184963982,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 55.8
+    },
+    {
+      "timestamp": 67,
+      "raw_signals": {
+        "fp1_mean": 0.02486147774608634,
+        "fp2_mean": 0.007686253748993963,
+        "ppg": 0.0014129666774485763
+      },
+      "eeg_data": {
+        "alpha": 0.59,
+        "beta": 0.38,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.15124475107835203,
+        "arousal": 0.08152595692993173,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.15124475107835203,
+        "load": 0.5545312148260797,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 68.9
+    },
+    {
+      "timestamp": 68,
+      "raw_signals": {
+        "fp1_mean": 0.014790908465822112,
+        "fp2_mean": 0.02271599939051664,
+        "ppg": 0.0011947741444384965
+      },
+      "eeg_data": {
+        "alpha": 0.33,
+        "beta": 0.6,
+        "gamma": 0.06,
+        "HR": 70
+      },
+      "russell": {
+        "valence": -0.1686693782239681,
+        "arousal": 0.12548491844107149,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.1686693782239681,
+        "load": 1.826432617451774,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 98.7
+    },
+    {
+      "timestamp": 69,
+      "raw_signals": {
+        "fp1_mean": 0.006509661318036403,
+        "fp2_mean": 0.008340064776917476,
+        "ppg": 0.001636423133007419
+      },
+      "eeg_data": {
+        "alpha": 0.6,
+        "beta": 0.36,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.10879011046379973,
+        "arousal": 0.10702415075968655,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": 0.10879011046379973,
+        "load": 0.6101997835242204,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 67.7
+    },
+    {
+      "timestamp": 70,
+      "raw_signals": {
+        "fp1_mean": 0.01160045841129592,
+        "fp2_mean": 0.017080417029226684,
+        "ppg": 0.00039929496127542717
+      },
+      "eeg_data": {
+        "alpha": 0.6,
+        "beta": 0.36,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.16935729453449405,
+        "arousal": 0.12313436885085928,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": 0.16935729453449405,
+        "load": 0.6431951922942473,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 68.5
+    },
+    {
+      "timestamp": 71,
+      "raw_signals": {
+        "fp1_mean": 0.009865722033460969,
+        "fp2_mean": 0.009668895599999968,
+        "ppg": 0.0016007921289340832
+      },
+      "eeg_data": {
+        "alpha": 0.64,
+        "beta": 0.33,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.08930669750338453,
+        "arousal": 0.10142692427593764,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": 0.08930669750338453,
+        "load": 0.5480225738436437,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 65.2
+    },
+    {
+      "timestamp": 72,
+      "raw_signals": {
+        "fp1_mean": 0.02354342923855461,
+        "fp2_mean": 0.023195790913496606,
+        "ppg": 7.086625095958346e-05
+      },
+      "eeg_data": {
+        "alpha": 0.72,
+        "beta": 0.25,
+        "gamma": 0.03,
+        "HR": 72
+      },
+      "russell": {
+        "valence": 0.11192846955261329,
+        "arousal": 0.07704088770042833,
+        "emotion": "Happy"
+      },
+      "suppression": {
+        "expression": 0.11192846955261329,
+        "load": 0.3364115695209509,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 82.5
+    },
+    {
+      "timestamp": 73,
+      "raw_signals": {
+        "fp1_mean": 0.024498236960587578,
+        "fp2_mean": -0.010781042076646642,
+        "ppg": 0.0016114277090481524
+      },
+      "eeg_data": {
+        "alpha": 0.59,
+        "beta": 0.36,
+        "gamma": 0.04,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.28736133363333116,
+        "arousal": 0.07732602122298513,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.28736133363333116,
+        "load": 0.6302712845230635,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 75.2
+    },
+    {
+      "timestamp": 74,
+      "raw_signals": {
+        "fp1_mean": 0.019674551174732994,
+        "fp2_mean": 0.015668776995081596,
+        "ppg": 0.00032540929458720595
+      },
+      "eeg_data": {
+        "alpha": 0.51,
+        "beta": 0.44,
+        "gamma": 0.05,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.42036561432271874,
+        "arousal": 0.09971941366332786,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.42036561432271874,
+        "load": 0.8856298989491264,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 67.4
+    },
+    {
+      "timestamp": 75,
+      "raw_signals": {
+        "fp1_mean": 0.01905931860687464,
+        "fp2_mean": -1.7172816206745614e-05,
+        "ppg": 0.0007916581310551436
+      },
+      "eeg_data": {
+        "alpha": 0.55,
+        "beta": 0.4,
+        "gamma": 0.05,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.3288745530932775,
+        "arousal": 0.09460432134110225,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.3288745530932775,
+        "load": 0.8156568151163321,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 69.4
+    },
+    {
+      "timestamp": 76,
+      "raw_signals": {
+        "fp1_mean": 0.015687178173786502,
+        "fp2_mean": 0.013117228702662718,
+        "ppg": 0.00047290842858335844
+      },
+      "eeg_data": {
+        "alpha": 0.47,
+        "beta": 0.48,
+        "gamma": 0.06,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.3964848011667961,
+        "arousal": 0.11939547462961624,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.3964848011667961,
+        "load": 1.0156440554045059,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 62.5
+    },
+    {
+      "timestamp": 77,
+      "raw_signals": {
+        "fp1_mean": 0.0255979700082149,
+        "fp2_mean": 0.03188279896928452,
+        "ppg": 0.0010911507793284242
+      },
+      "eeg_data": {
+        "alpha": 0.41,
+        "beta": 0.53,
+        "gamma": 0.06,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.5123920419623138,
+        "arousal": 0.12191585236201806,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.5123920419623138,
+        "load": 1.2027154243751972,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 83.8
+    },
+    {
+      "timestamp": 78,
+      "raw_signals": {
+        "fp1_mean": 0.021791709748362458,
+        "fp2_mean": 0.017816184555535686,
+        "ppg": 0.0016358341700435063
+      },
+      "eeg_data": {
+        "alpha": 0.55,
+        "beta": 0.4,
+        "gamma": 0.05,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.31098574647576316,
+        "arousal": 0.09288209400461198,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.31098574647576316,
+        "load": 0.6735500313092734,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 69.9
+    },
+    {
+      "timestamp": 79,
+      "raw_signals": {
+        "fp1_mean": 0.026119884410947272,
+        "fp2_mean": 0.03739515468348718,
+        "ppg": 0.0005617416460939893
+      },
+      "eeg_data": {
+        "alpha": 0.71,
+        "beta": 0.26,
+        "gamma": 0.03,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.034833515218802985,
+        "arousal": 0.08043678554277842,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": -0.034833515218802985,
+        "load": 0.29860860703109576,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 56.8
+    },
+    {
+      "timestamp": 80,
+      "raw_signals": {
+        "fp1_mean": 0.006513191902694521,
+        "fp2_mean": 0.02103930709318959,
+        "ppg": 0.0009338129681438211
+      },
+      "eeg_data": {
+        "alpha": 0.81,
+        "beta": 0.17,
+        "gamma": 0.03,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.022688817517151294,
+        "arousal": 0.05140548534547696,
+        "emotion": "Relaxed"
+      },
+      "suppression": {
+        "expression": 0.022688817517151294,
+        "load": 0.20850522777495994,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 53.4
+    },
+    {
+      "timestamp": 81,
+      "raw_signals": {
+        "fp1_mean": 0.02393492969124497,
+        "fp2_mean": 0.012627832085242416,
+        "ppg": 0.00038537005685448353
+      },
+      "eeg_data": {
+        "alpha": 0.68,
+        "beta": 0.26,
+        "gamma": 0.05,
+        "HR": 71
+      },
+      "russell": {
+        "valence": 0.07176993247617616,
+        "arousal": 0.0804239115136974,
+        "emotion": "Relaxed"
+      },
+      "suppression": {
+        "expression": 0.07176993247617616,
+        "load": 0.43239913165076355,
+        "state": "PositiveOverload"
+      },
+      "suppression_index": 61.5
+    },
+    {
+      "timestamp": 82,
+      "raw_signals": {
+        "fp1_mean": 0.01827823774915845,
+        "fp2_mean": 0.0035005548649198093,
+        "ppg": 0.0006063061456060595
+      },
+      "eeg_data": {
+        "alpha": 0.65,
+        "beta": 0.27,
+        "gamma": 0.07,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.03673357696259015,
+        "arousal": 0.08096741239986861,
+        "emotion": "Depressed"
+      },
+      "suppression": {
+        "expression": -0.03673357696259015,
+        "load": 0.4177166418518181,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 60.8
+    },
+    {
+      "timestamp": 83,
+      "raw_signals": {
+        "fp1_mean": 0.011186104192210784,
+        "fp2_mean": 0.0030138747562211844,
+        "ppg": 0.0017861025675240836
+      },
+      "eeg_data": {
+        "alpha": 0.33,
+        "beta": 0.54,
+        "gamma": 0.13,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.5229183391663579,
+        "arousal": 0.09828087246211961,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.5229183391663579,
+        "load": 1.6723464964368788,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 91.0
+    },
+    {
+      "timestamp": 84,
+      "raw_signals": {
+        "fp1_mean": 0.006648739916855145,
+        "fp2_mean": -0.00391207347870369,
+        "ppg": 0.000857124655885987
+      },
+      "eeg_data": {
+        "alpha": 0.48,
+        "beta": 0.4,
+        "gamma": 0.12,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.51450942944699,
+        "arousal": 0.07582746450926767,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.51450942944699,
+        "load": 0.8637667941026921,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 74.6
+    },
+    {
+      "timestamp": 85,
+      "raw_signals": {
+        "fp1_mean": 0.0127601601377146,
+        "fp2_mean": 0.029663640329527976,
+        "ppg": 0.0003517966395961954
+      },
+      "eeg_data": {
+        "alpha": 0.67,
+        "beta": 0.26,
+        "gamma": 0.07,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.5330862150704179,
+        "arousal": 0.04926561132269277,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.5330862150704179,
+        "load": 0.4447871695784067,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 81.1
+    },
+    {
+      "timestamp": 86,
+      "raw_signals": {
+        "fp1_mean": 0.010273625439812698,
+        "fp2_mean": 0.010638823414291471,
+        "ppg": 0.0007420305845813984
+      },
+      "eeg_data": {
+        "alpha": 0.69,
+        "beta": 0.27,
+        "gamma": 0.04,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.4733156433160001,
+        "arousal": 0.0493333667992258,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.4733156433160001,
+        "load": 0.29415462712733703,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 55.5
+    },
+    {
+      "timestamp": 87,
+      "raw_signals": {
+        "fp1_mean": 0.022683017055185432,
+        "fp2_mean": 0.014598979994146614,
+        "ppg": 0.0016098268784092064
+      },
+      "eeg_data": {
+        "alpha": 0.62,
+        "beta": 0.32,
+        "gamma": 0.07,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.4774628278542318,
+        "arousal": 0.06802146273069525,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.4774628278542318,
+        "load": 0.5941647307550586,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 77.2
+    },
+    {
+      "timestamp": 88,
+      "raw_signals": {
+        "fp1_mean": 0.01957378047135611,
+        "fp2_mean": -0.006112219556729713,
+        "ppg": 0.001061471756733854
+      },
+      "eeg_data": {
+        "alpha": 0.63,
+        "beta": 0.31,
+        "gamma": 0.06,
+        "HR": 71
+      },
+      "russell": {
+        "valence": -0.34811910230283566,
+        "arousal": 0.07077389107512673,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.34811910230283566,
+        "load": 0.3829063147651598,
+        "state": "SustainedSuppression"
+      },
+      "suppression_index": 59.0
+    },
+    {
+      "timestamp": 89,
+      "raw_signals": {
+        "fp1_mean": 0.012567005377673152,
+        "fp2_mean": 0.02057494136820156,
+        "ppg": 4.4248523958185896e-06
+      },
+      "eeg_data": {
+        "alpha": 0.52,
+        "beta": 0.42,
+        "gamma": 0.07,
+        "HR": 72
+      },
+      "russell": {
+        "valence": -0.2145379250854183,
+        "arousal": 0.10303530796409414,
+        "emotion": "Bored"
+      },
+      "suppression": {
+        "expression": -0.2145379250854183,
+        "load": 0.9017072686348316,
+        "state": "MildSuppression"
+      },
+      "suppression_index": 67.6
     }
   ],
   "summary": {
     "duration_sec": 90,
     "total_steps": 90,
     "russell_ratio": {
-      "Bored": 58,
-      "Depressed": 13,
-      "Relaxed": 8,
-      "Happy": 7,
-      "Nervous": 1
+      "Nervous": 2,
+      "Bored": 64,
+      "Depressed": 9,
+      "Happy": 8,
+      "Relaxed": 4
     },
     "suppression_ratio": {
-      "PositiveOverload": 11,
-      "MildSuppression": 25,
-      "SustainedSuppression": 25
+      "SustainedSuppression": 31,
+      "PreBreakdownSuppression": 1,
+      "MildSuppression": 21,
+      "PositiveOverload": 8
     }
   }
 }
-
-
